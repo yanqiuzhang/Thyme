@@ -1,6 +1,6 @@
 import axios from "axios";
 
-async postTimesheets(timesheets) {
+const PostTimesheets = async (begin, end) => {
   let apiUrl = "";
   const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
@@ -19,8 +19,8 @@ async postTimesheets(timesheets) {
     const response = axios.post(
       apiUrl + "timesheets",
       {
-        begin: "2019-04-02T13:28:17.113Z",
-        end: "2019-04-02T13:28:17.113Z",
+        begin: begin,
+        end: end,
         customer: 0,
         project: 0,
         activity: 0,
@@ -40,4 +40,4 @@ async postTimesheets(timesheets) {
   }
 }
 
-export {postTimesheets}
+export {PostTimesheets}
