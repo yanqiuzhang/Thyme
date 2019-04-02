@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 class App extends Component {
   async getKimai() {
-    let apiUrl = ""
-    const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+    let apiUrl = "";
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     if (process.env.NODE_ENV === "development") {
       debugger;
       apiUrl = proxyUrl + "http://demo.kimai.org/api/";
