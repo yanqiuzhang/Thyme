@@ -5,7 +5,6 @@ class App extends Component {
     let apiUrl = "";
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     if (process.env.NODE_ENV === "development") {
-      debugger;
       apiUrl = proxyUrl + "http://demo.kimai.org/api/";
       console.log(process.env.NODE_ENV);
     } else {
