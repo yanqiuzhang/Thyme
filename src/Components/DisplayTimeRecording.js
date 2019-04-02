@@ -17,7 +17,6 @@ class DisplayTimeRecording extends Component {
       </>
     )
   }
-
 }
 
 export {DisplayTimeRecording}
