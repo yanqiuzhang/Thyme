@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import {TimeRecording} from './Modules/TimeRecording';
+import {DisplayTimeRecording} from './Components/DisplayTimeRecording';
 
 class App extends Component {
   render() {
     return (
       <>
+        <DisplayTimeRecording/>
       </>
     )
   }
