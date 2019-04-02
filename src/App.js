@@ -1,12 +1,13 @@
-import React, { Component } from 'react'
-import { Button, Grid, Header, Image, Label, Menu, Segment, Sidebar } from 'semantic-ui-react'
+import React, { Component } from 'react';
+import { Button, Grid, Menu, Sidebar } from 'semantic-ui-react';
+import { IoIosMenu } from 'react-icons/io';
+import logo from './image/image.png'
+
 
 class App extends Component {
 	state = {
 		logCount: 0,
 	}
-
-	clearLog = () => this.setState({ logCount: 0 })
 
 	handleHideClick = () => this.setState({ visible: false })
 	handleShowClick = () => this.setState({ visible: true })
@@ -18,27 +19,20 @@ class App extends Component {
 		})
 
 	render() {
-		const { logCount, visible } = this.state
+		const { visible } = this.state
 
 		return (
 			<Grid columns={2}>
 				<Grid.Column>
-					<Button.Group>
-						<Button disabled={visible} onClick={this.handleShowClick}>
-							Show sidebar
-              </Button>
-						<Button disabled={!visible} onClick={this.handleHideClick}>
-							Hide sidebar
-              </Button>
-					</Button.Group>
+					<Button disabled={visible} onClick={this.handleShowClick}>
+						<IoIosMenu />
+					</Button>
 				</Grid.Column>
-				<Grid.Column>
 					<Sidebar
 						as={Menu}
-						animation='overlay'
-						icon='labeled'
+						// animation='overlay'
+						// icon='labeled'
 						inverted
-						onHidden={this.updateLog('onHidden')}
 						onHide={() => {
 							this.handleSidebarHide()
 							this.updateLog('onHide')()
@@ -47,14 +41,16 @@ class App extends Component {
 						onVisible={this.updateLog('onVisible')}
 						vertical
 						visible={visible}
-						width='70px'
+						style={{
+							background:'#46b395',
+							width:'250px' 
+						}}
 					>
-					<h1>thyme productivity tracker</h1>
+					  <img src={logo} alt="logo" style={{paddingTop: '20px', width: '207px', height: '135px'}} />
 						<Menu.Item as='a'>Tab1</Menu.Item>
 						<Menu.Item as='a'>Tab2</Menu.Item>
 						<Menu.Item as='a'>Tab3</Menu.Item>
 					</Sidebar>
-				</Grid.Column>
 			</Grid>
 		)
 	}
