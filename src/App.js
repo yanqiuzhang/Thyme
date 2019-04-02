@@ -43,13 +43,15 @@ class App extends Component {
 						visible={visible}
 						style={{
 							background:'#46b395',
-							width:'250px' 
+							width:'300px'
 						}}
 					>
-					  <img src={logo} alt="logo" style={{paddingTop: '20px', width: '207px', height: '135px'}} />
-						<Menu.Item as='a'>Tab1</Menu.Item>
-						<Menu.Item as='a'>Tab2</Menu.Item>
-						<Menu.Item as='a'>Tab3</Menu.Item>
+					  <img src={logo} alt="logo" style={{paddingTop: '20px', marginBottom: '25px', width: '207px', height: '135px'}} />
+						<Menu.Item as='a' style={{background: '#dbdbdf', marginBottom: '10px'}}>Tab1</Menu.Item>
+						<Menu.Item as='a' style={{background: '#dbdbdf', marginBottom: '10px'}}>Tab2</Menu.Item>
+						<Menu.Item as='a' style={{background: '#dbdbdf', marginBottom: '10px'}}>Tab3</Menu.Item>
+						<Menu.Item as='a' style={{background: '#dbdbdf', marginBottom: '10px'}}>Tab4</Menu.Item>
+						<Menu.Item as='a' style={{background: '#dbdbdf', marginBottom: '10px'}}>Tab5</Menu.Item>
 					</Sidebar>
 			</Grid>
 		)
