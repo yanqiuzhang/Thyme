@@ -4,13 +4,13 @@ const TimeInputForm = () => {
   return (
     <form>
       <div>
-        <label >Start Time</label>
-        <input id="begin"></input>
+        <label name="Start Time">Start Time</label>
+        <input name="begin"></input>
       </div>
 
       <div>
-        <label>End Time</label>
-        <input id="end"></input>
+        <label name="End Time">End Time</label>
+        <input name="end"></input>
       </div>
     </form>
   )
