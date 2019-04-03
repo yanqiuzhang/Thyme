@@ -1,19 +1,18 @@
-import React from 'react';
+import React from "react";
 
-const TimeInputForm = () => {
+const TimeInputForm = (props) => {
   return (
     <form>
       <div>
         <label name="Start Time">Start Time</label>
-        <input name="begin"></input>
+        <input onChange={props.changeValue} type="text" name="begin" />
       </div>
-
       <div>
         <label name="End Time">End Time</label>
-        <input name="end"></input>
+        <input type="text" name="end" />
       </div>
     </form>
-  )
-}
+  );
+};
 
-export {TimeInputForm};
+export { TimeInputForm };
