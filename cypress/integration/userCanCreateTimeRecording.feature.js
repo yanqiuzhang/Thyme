@@ -15,6 +15,5 @@ describe("User can create time recording", () => {
   it("when user clicks on Create", () => {
     cy.get("button")
       .click()
-      .should("contain", "Create");
   });
 });

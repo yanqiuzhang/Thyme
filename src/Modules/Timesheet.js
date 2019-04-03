@@ -11,8 +11,8 @@ const saveData = async (begin, end) => {
     const response = await axios.post(
       apiUrl + "timesheets",
       {
-        begin: "2019-04-02 01:33",
-        end: "2019-04-02 06:33",
+        begin: begin,
+        end: end,
         customer: 1,
         project: 1,
         activity: 1,

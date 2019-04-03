@@ -3,21 +3,18 @@ import {saveData} from "../Modules/Timesheet";
 import { TimeInputForm } from "./TimeInputForm";
 
 class DisplayTimeRecording extends Component {
-  constructor(props) {
-    super(props)
-    
-    this.state = {
-      begin: '',
-      end: ''
-    }
+  state = {
+    begin: '',
+    end: ''
   }
-  async PostTimesheets() {
-    await saveData(this.state.begin, this.state.end);
+  async postTimesheets() {
+    let response = await saveData(this.state.begin, this.state.end);
+    this.setState({begin: response.begin, end: response.end})
   }
 
   onChange(event) {
     this.setState({
-      [event.target.name]: event.taget.value
+      [event.target.name]: event.target.value
     })
   }
 
@@ -29,9 +26,7 @@ class DisplayTimeRecording extends Component {
           begin={this.state.begin} 
           end={this.state.end} 
          />
-        <DisplayTimeRecording/>
-
-        <button onClick={() => this.PostTimesheets.bind(this)}>Create</button>
+        <button onClick={this.postTimesheets.bind(this)}>Create</button>
       </>
     );
   }
