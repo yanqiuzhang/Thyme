@@ -1,22 +1,35 @@
 import React, { Component } from "react";
-import {PostTimesheets} from "../Modules/Timesheet"
+import {saveData} from "../Modules/Timesheet";
 
 class DisplayTimeRecording extends Component {
-  componentDidMount(){
-    this.PostTimesheets()
+  constructor(props) {
+    super(props)
+    
+    this.state = {
+      begin: '',
+      end: ''
+    }
+  }
+  async saveData() {
+    await saveData();
   }
 
-  async PostTimesheets() {
-    await PostTimesheets();
+  onChange(event) {
+    this.setState({
+      [event.target.name]: event.taget.value
+    })
   }
 
-  render () {
+  render() {
     return (
       <>
-      <button onClick={() => this.PostTimesheets.bind(this)}>Create</button>
+        <TimeInputForm
+        changeValue={this.onChange.bind(this)}
+         />
+        <button onClick={() => this.saveData()}>Create</button>
       </>
-    )
+    );
   }
 }
 
-export {DisplayTimeRecording}
+export { DisplayTimeRecording };
