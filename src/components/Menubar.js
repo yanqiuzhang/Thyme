@@ -38,7 +38,7 @@ class Menubar extends Component {
 					}}
 				>
 					<div className="form">
-						<img src={logo} alt="logo" style={{ paddingTop: '20px', marginBottom: '25px', width: '207px', height: '135px' }} />
+						<img src={logo} alt="logo" style={{ marginLeft: '27px', paddingTop: '20px', marginBottom: '25px', width: '207px', height: '135px' }} />
 					</div>
 					<Menu.Item className="item" as='a' style={{ background: '#dbdbdf', marginBottom: '10px' }}>Tab1</Menu.Item>
 					<Menu.Item as='a' style={{ background: '#dbdbdf', marginBottom: '10px' }}>Tab2</Menu.Item>
