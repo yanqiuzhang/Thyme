@@ -4,18 +4,15 @@ import { IoIosMenu } from 'react-icons/io';
 import logo from '../image/image.png'
 
 class Menubar extends Component {
-	state = {
-		logCount: 0,
+	constructor() {
+		super();
+		this.state = {
+			visible: '',
+		}
 	}
-
 	handleHideClick = () => this.setState({ visible: false })
 	handleShowClick = () => this.setState({ visible: true })
 	handleSidebarHide = () => this.setState({ visible: false })
-
-	updateLog = eventName => () =>
-		this.setState({
-			logCount: this.state.logCount + 1,
-		})
 
 	render() {
 		const { visible } = this.state
@@ -32,10 +29,7 @@ class Menubar extends Component {
 					inverted
 					onHide={() => {
 						this.handleSidebarHide()
-						this.updateLog('onHide')()
 					}}
-					onShow={this.updateLog('onShow')}
-					onVisible={this.updateLog('onVisible')}
 					vertical
 					visible={visible}
 					style={{
@@ -44,7 +38,7 @@ class Menubar extends Component {
 					}}
 				>
 					<div className="form">
-						<img src={logo} alt="logo" style={{ paddingTop: '20px', marginBottom: '25px', width: '207px', height: '135px' }} />
+						<img src={logo} alt="logo" style={{ marginLeft: '27px', paddingTop: '20px', marginBottom: '25px', width: '207px', height: '135px' }} />
 					</div>
 					<Menu.Item className="item" as='a' style={{ background: '#dbdbdf', marginBottom: '10px' }}>Tab1</Menu.Item>
 					<Menu.Item as='a' style={{ background: '#dbdbdf', marginBottom: '10px' }}>Tab2</Menu.Item>
