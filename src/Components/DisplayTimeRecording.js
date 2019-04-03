@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {saveData} from "../Modules/Timesheet";
+import { TimeInputForm } from "./TimeInputForm";
 
 class DisplayTimeRecording extends Component {
   constructor(props) {
@@ -10,8 +11,8 @@ class DisplayTimeRecording extends Component {
       end: ''
     }
   }
-  async saveData() {
-    await saveData();
+  async PostTimesheets() {
+    await saveData(this.state.begin, this.state.end);
   }
 
   onChange(event) {
@@ -24,9 +25,13 @@ class DisplayTimeRecording extends Component {
     return (
       <>
         <TimeInputForm
-        changeValue={this.onChange.bind(this)}
+          changeValue={this.onChange.bind(this)}
+          begin={this.state.begin} 
+          end={this.state.end} 
          />
-        <button onClick={() => this.saveData()}>Create</button>
+        <DisplayTimeRecording/>
+
+        <button onClick={() => this.PostTimesheets.bind(this)}>Create</button>
       </>
     );
   }
