@@ -18,5 +18,3 @@ describe('Display a sidebar', () => {
 		  .should('contain', 'Tab1')
   })
 })
-
-
