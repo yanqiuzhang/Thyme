@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import Menubar from './components/Menubar'
-import LoginForm from './components/LoginForm'
-import { authenticate } from './Modules/Auth';
 import LoginLogic from './components/LoginLogic'
 
 class App extends Component {
@@ -19,14 +17,14 @@ class App extends Component {
 	}
 
 	isUserAuthenticated() {
-		if (this.state.authenticated == true) {
+		if (this.state.authenticated === true) {
 			const user = JSON.parse(sessionStorage.current_user).username
 			return (
 				<div style={{ overflow: 'hidden' }}>
 					<div style={{ float: 'left', width: '400px' }}>
 						<Menubar />
 					</div>
-					<div style={{ float: 'right', width: '600px' }}>
+					<div style={{ float: 'left', paddingLeft: '40px' }}>
 						<p id="login_message">
 							Welcome, {user}
 						</p>

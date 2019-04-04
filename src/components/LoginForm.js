@@ -1,19 +1,21 @@
 import React from 'react';
+import thymeLogo from '../image/logo.png'
+import '../style/style.css';
 
 const LoginForm = (props) => {
 	return (
-		<form>
-			<div>
-				<label>Username</label>
-				<input id="username" type="name" onChange={props.inputChangeHandler}></input>
-			</div>
-
-			<div>
-				<label>Password</label>
-				<input id="password" type="password" onChange={props.inputChangeHandler}></input>
-			</div>
-			<button onClick={(e) => props.clickLogin(e)} type="submit">Sign in</button>
-		</form>
+		<div className="form_div">
+				<img src={thymeLogo} alt="logo" className="thyme_logo" />
+				<form>
+					<div>
+						<input id="username" type="name" placeholder="Username" onChange={props.inputChangeHandler} className="user_input"></input>
+					</div>
+					<div>
+						<input id="password" type="password" placeholder="Password" onChange={props.inputChangeHandler} className="user_input"></input>
+					</div>
+					<button onClick={(e) => props.clickLogin(e)} type="submit" className="sign_in">Sign in</button>
+				</form>
+		</div>
 	)
 }
 

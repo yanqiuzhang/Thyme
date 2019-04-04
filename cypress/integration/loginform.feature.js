@@ -15,6 +15,6 @@ describe('Login form', () => {
 			.get('input[type=name]').type('susan_super')
 			.get('input[type=password]').type('wrong_password')
 			.get('button[type=submit]').click()
-			.get('#error_message').should('contain', 'Invalid credentials')
+			.get('#login_message').should('contain', 'Invalid credentials')
 	})
 })
