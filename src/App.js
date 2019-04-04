@@ -35,9 +35,16 @@ class App extends Component {
 		if (this.state.authenticated === true) {
 			const user = JSON.parse(sessionStorage.current_user).username
 			loginFormOrWelcomeMessage = (
-				<p id="login_message">
-					Welcome, {user}
-				</p>
+				<div style={{ overflow: 'hidden' }}>
+					<div style={{ float: 'left', width: '400px' }}>
+						<Menubar />
+					</div>
+					<div style={{ float: 'right', width: '600px' }}>
+						<p id="login_message">
+							Welcome, {user}
+						</p>
+					</div>
+				</div>
 			)
 		} else {
 			loginFormOrWelcomeMessage = (
@@ -49,13 +56,8 @@ class App extends Component {
 		}
 
 		return (
-			<div style={{ overflow: 'hidden' }}>
-				<div style={{ float: 'left', width: '400px' }}>
-					<Menubar />
-				</div>
-				<div style={{ float: 'right', width: '600px' }}>
-					{loginFormOrWelcomeMessage}
-				</div>
+			<div >
+				{loginFormOrWelcomeMessage}
 			</div>
 		)
 	}

@@ -9,4 +9,12 @@ describe('Login form', () => {
 			.get('button[type=submit]').click()
 			.get('#login_message').should('contain', 'Welcome, susan_super')
 	})
+
+	it('User does not get successfully authenticated', () => {
+		cy.visit('http://localhost:3000')
+			.get('input[type=name]').type('susan_super')
+			.get('input[type=password]').type('wrong_password')
+			.get('button[type=submit]').click()
+			.get('#login_message').should('contain', 'Invalid credentials')
+	})
 })
