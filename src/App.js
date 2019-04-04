@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import DisplayTimeRecording from "./Components/DisplayTimeRecording";
-import { Menubar } from "./Components/Menubar";
+import SaveTimeRecording from "./components/SaveTimeRecording";
+import { Menubar } from "./components/Menubar";
 
 class App extends Component {
 	render() {
 		return (
 			<>
 				<Menubar />
-				<DisplayTimeRecording />
+				<SaveTimeRecording />
 			</>
 		);
 	}
