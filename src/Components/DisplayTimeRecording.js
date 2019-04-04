@@ -12,8 +12,6 @@ class DisplayTimeRecording extends Component {
 
 	async postTimesheets() {
 		let response = await saveData(this.state.begin, this.state.end);
-		// this.setState({ begin: response.begin, end: response.end });
-		// what are we supposed to do with the response?
 		this.setState({
 			saveData: true
 		})

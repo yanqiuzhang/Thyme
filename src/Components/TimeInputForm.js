@@ -6,13 +6,13 @@ const TimeInputForm = props => {
 		<>
 			<label name="Start Time">Start Time</label>
 			<Input
-				placeholder="YYYY-MM-DD 00:00"
+				placeholder="00:00"
 				onChange={props.changeValue}
 				name="begin"
 			/>
 			<label name="End Time">End Time</label>
 			<Input
-				placeholder="YYYY-MM-DD 00:00"
+				placeholder="00:00"
 				onChange={props.changeValue}
 				name="end"
 			/>

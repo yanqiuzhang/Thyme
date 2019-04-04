@@ -1,9 +1,9 @@
 import axios from "axios";
+import moment from 'moment';
 
 const saveData = async (begin, end) => {
 	const apiUrl = "https://demo-stable.kimai.org/api/";
 	const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-
 
 	let headers = {
 		"X-AUTH-USER": "susan_super",
@@ -16,8 +16,8 @@ const saveData = async (begin, end) => {
 		const response = await axios.post(
 			proxyUrl + apiUrl + "timesheets",
 			{
-				begin: begin,
-				end: end,
+				begin: moment(begin, "hh:mm").format('YYYY-MM-DD hh:mm'),
+				end: moment(end, "hh:mm").format('YYYY-MM-DD hh:mm'),
 				customer: 1,
 				project: 1,
 				activity: 1,
