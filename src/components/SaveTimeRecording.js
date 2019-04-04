@@ -28,7 +28,7 @@ class SaveTimeRecording extends Component {
 
 		if (!this.state.saveTime) {
 			saveButton = (
-				<Button name="create" onClick={this.postTimesheets.bind(this)}>Create</Button>
+				<Button style={{background: '#46b395'}} name="create" onClick={this.postTimesheets.bind(this)}>Create</Button>
 			);
 		} else {
 			saveButton = <p>Your time was saved</p>;

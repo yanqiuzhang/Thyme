@@ -21,12 +21,12 @@ class Menubar extends Component {
 		return (
 			<Grid columns={2}>
 				<Grid.Column
-					style={{ background: "#5bb695", width: "90px", height: "944px" }}
+					style={{ background: "#5bb695", width: "60px", height: "944px" }}
 				>
 					<Button
 						disabled={visible}
 						onClick={this.handleShowClick}
-						style={{ background: "#5bb695"}}
+						style={{ background: "#5bb695", padding: 0, marginLeft: 7}}
 					>
 						<IoIosMenu size={30} />
 					</Button>
