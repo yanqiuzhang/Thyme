@@ -7,6 +7,6 @@ describe('Login form', () => {
 			.get('input[type=name]').type('susan_super')
 			.get('input[type=password]').type('api_kitten')
 			.get('button[type=submit]').click()
-			.should('contain', 'You have signed in successfully!')
+			.get('#login_message').should('contain', 'Welcome, susan_super')
 	})
 })
