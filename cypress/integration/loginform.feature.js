@@ -1,12 +1,12 @@
 /// <reference types="Cypress" />
 
-describe('Display a sidebar', () => {
+describe('Login form', () => {
 
-	it('when user visits the page', () => {
+	it('when user visits Login page', () => {
 		cy.visit('http://localhost:3000')
-		cy.get('input[id="username"]');
-    cy.get('label[name="Username"]').should("contain", "Username");
-    cy.get('input[id="password"]');
-    cy.get('label[name="Password"]').should("contain", "Password");
+			.get('input[type=name]').type('susan_super')
+			.get('input[type=password]').type('api_kitten')
+			.get('button[type=submit]').click()
+			.should('contain', 'You have signed in successfully!')
 	})
 })
