@@ -1,15 +1,20 @@
 import axios from "axios";
 
 const saveData = async (begin, end) => {
-	const apiUrl = "https://demo.kimai.org/api/";
+	const apiUrl = "https://demo-stable.kimai.org/api/";
+	const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+
 
 	let headers = {
 		"X-AUTH-USER": "susan_super",
-		"X-AUTH-TOKEN": "api_kitten"
+		"X-AUTH-TOKEN": "api_kitten",
+		"Access-Control-Allow-Origin": "*",
+		'Accept': 'application/json',
+    'Content-Type': 'application/json',
 	};
 	try {
 		const response = await axios.post(
-			apiUrl + "timesheets",
+			proxyUrl + apiUrl + "timesheets",
 			{
 				begin: begin,
 				end: end,
@@ -25,8 +30,7 @@ const saveData = async (begin, end) => {
 				mode: "cors"
 			}
 		);
-		console.log(response);
-		return response.data;
+		return response;
 	} catch (error) {
 		console.error(error);
 	}

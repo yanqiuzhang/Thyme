@@ -7,7 +7,7 @@ describe("User can create time recording", () => {
 		cy.get('label[name="End Time"]').should("contain", "End Time");
 		cy.get('input[name="begin"]').type("2019-04-12 07:00");
 		cy.get('input[name="end"]').type("2019-04-12 08:00");
-		cy.get('button[name="Create"]')
+		cy.get('button[name="create"]')
 		.click();
 	});
 });

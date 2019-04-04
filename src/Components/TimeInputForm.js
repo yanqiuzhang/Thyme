@@ -3,7 +3,7 @@ import { Input } from "semantic-ui-react";
 
 const TimeInputForm = props => {
 	return (
-		<form>
+		<>
 			<label name="Start Time">Start Time</label>
 			<Input
 				placeholder="YYYY-MM-DD 00:00"
@@ -16,8 +16,8 @@ const TimeInputForm = props => {
 				onChange={props.changeValue}
 				name="end"
 			/>
-		</form>
+		</>
 	);
 };
 
-export { TimeInputForm };
+export default TimeInputForm;

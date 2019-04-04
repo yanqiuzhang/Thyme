@@ -1,18 +1,22 @@
 import React, { Component } from "react";
 import { saveData } from "../Modules/Timesheet";
-import { TimeInputForm } from "./TimeInputForm";
+import TimeInputForm  from "./TimeInputForm";
 import { Form, Button, Grid } from "semantic-ui-react";
 
 class DisplayTimeRecording extends Component {
 	state = {
 		begin: "",
 		end: "",
+		saveData: false
 	};
 
 	async postTimesheets() {
 		let response = await saveData(this.state.begin, this.state.end);
 		// this.setState({ begin: response.begin, end: response.end });
 		// what are we supposed to do with the response?
+		this.setState({
+			saveData: true
+		})
 	}
 
 	onChange(event) {
@@ -24,11 +28,11 @@ class DisplayTimeRecording extends Component {
 	render() {
 		let saveButton;
 
-		if (this.state.saveData === false) {
+		if (!this.state.saveData) {
 			saveButton = (
-				<Button onClick={this.postTimesheets.bind(this)}>Create</Button>
+				<Button name="create" onClick={this.postTimesheets.bind(this)}>Create</Button>
 			);
-		} else if (this.state.saveData === true) {
+		} else {
 			saveButton = <p>Your time was saved</p>;
 		}
 		return (
@@ -40,13 +44,7 @@ class DisplayTimeRecording extends Component {
 							begin={this.state.begin}
 							end={this.state.end}
 						/>
-						<Button
-							positive
-							name="Create"
-							onClick={this.postTimesheets.bind(this)}
-						>
-							Create
-						</Button>
+						{saveButton}
 					</Form.Group>
 				</Grid>
 			</Grid>
@@ -54,4 +52,4 @@ class DisplayTimeRecording extends Component {
 	}
 }
 
-export { DisplayTimeRecording };
+export default DisplayTimeRecording
