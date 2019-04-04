@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import { Button, Grid, Menu, Sidebar } from "semantic-ui-react";
+import { Button, Grid, Menu, Sidebar, Segment } from "semantic-ui-react";
 import { IoIosMenu } from "react-icons/io";
 import logo from "../image/image.png";
+import SaveTimeRecording from "./SaveTimeRecording";
+
 
 class Menubar extends Component {
 	constructor() {
 		super();
 		this.state = {
-			visible: ""
+			visible: false
 		};
 	}
 	handleHideClick = () => this.setState({ visible: false });
@@ -20,7 +22,7 @@ class Menubar extends Component {
 		return (
 			<Grid columns={2}>
 				<Grid.Column
-					style={{ background: "#5bb695", width: "90px", height: "1200px" }}
+					style={{ background: "#5bb695", width: "90px", height: "auto" }}
 				>
 					<Button
 						disabled={visible}
@@ -30,64 +32,74 @@ class Menubar extends Component {
 						<IoIosMenu size={30} />
 					</Button>
 				</Grid.Column>
-				<Sidebar
-					as={Menu}
-					inverted
-					onHide={() => {
-						this.handleSidebarHide();
-					}}
-					vertical
-					visible={visible}
-					style={{
-						background: "#46b395",
-						width: "300px"
-					}}
-				>
-					<div className="form">
-						<img
-							src={logo}
-							alt="logo"
-							style={{
-								marginLeft: "27px",
-								paddingTop: "20px",
-								marginBottom: "25px",
-								width: "207px",
-								height: "135px"
+				<Grid.Column>
+					<Sidebar.Pushable as={Segment} style={{height: "50vh", width: "1000px"}}>
+						<Sidebar
+							as={Menu}
+							inverted
+							onHide={() => {
+								this.handleSidebarHide();
 							}}
-						/>
-					</div>
-					<Menu.Item
-						className="item"
-						as="a"
-						style={{ background: "#dbdbdf", marginBottom: "10px" }}
-					>
-						Tab1
-					</Menu.Item>
-					<Menu.Item
-						as="a"
-						style={{ background: "#dbdbdf", marginBottom: "10px" }}
-					>
-						Tab2
-					</Menu.Item>
-					<Menu.Item
-						as="a"
-						style={{ background: "#dbdbdf", marginBottom: "10px" }}
-					>
-						Tab3
-					</Menu.Item>
-					<Menu.Item
-						as="a"
-						style={{ background: "#dbdbdf", marginBottom: "10px" }}
-					>
-						Tab4
-					</Menu.Item>
-					<Menu.Item
-						as="a"
-						style={{ background: "#dbdbdf", marginBottom: "10px" }}
-					>
-						Tab5
-					</Menu.Item>
-				</Sidebar>
+							vertical
+							visible={visible}
+							style={{
+								background: "#46b395",
+								width: "300px"
+							}}
+						>
+							<div className="form">
+								<img
+									src={logo}
+									alt="logo"
+									style={{
+										marginLeft: "27px",
+										paddingTop: "20px",
+										marginBottom: "25px",
+										width: "207px",
+										height: "135px"
+									}}
+								/>
+							</div>
+							<Menu.Item
+								className="item"
+								as="a"
+								style={{ background: "#dbdbdf", marginBottom: "10px" }}
+							>
+								Tab1
+							</Menu.Item>
+							<Menu.Item
+								as="a"
+								style={{ background: "#dbdbdf", marginBottom: "10px" }}
+							>
+								Tab2
+							</Menu.Item>
+							<Menu.Item
+								as="a"
+								style={{ background: "#dbdbdf", marginBottom: "10px" }}
+							>
+								Tab3
+							</Menu.Item>
+							<Menu.Item
+								as="a"
+								style={{ background: "#dbdbdf", marginBottom: "10px" }}
+							>
+								Tab4
+							</Menu.Item>
+							<Menu.Item
+								as="a"
+								style={{ background: "#dbdbdf", marginBottom: "10px" }}
+							>
+								Tab5
+							</Menu.Item>
+						</Sidebar>
+						<Sidebar.Pusher>
+							<Segment basic>
+								<SaveTimeRecording />
+							</Segment>
+						</Sidebar.Pusher>
+
+					</Sidebar.Pushable>
+				</Grid.Column>
 			</Grid>
 		);
 	}
