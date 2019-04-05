@@ -13,7 +13,7 @@ const LoginForm = (props) => {
 					<div>
 						<input id="password" type="password" placeholder="Password" onChange={props.inputChangeHandler} className="user_input"></input>
 					</div>
-					<button onClick={(e) => props.clickLogin(e)} type="submit" className="sign_in">Sign in</button>
+					<button id="submit" onClick={(e) => props.clickLogin(e)} type="submit" className="sign_in">Sign in</button>
 				</form>
 		</div>
 	)
