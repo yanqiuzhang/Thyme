@@ -1,9 +1,14 @@
 import React, { Component } from "react";
-import { saveTime } from "../Modules/SaveTimesheet";
+import { saveTime } from "../modules/savetimesheet";
 import TimeInputForm from "./TimeInputForm";
 import { Form, Button, Grid } from "semantic-ui-react";
 
 class SaveTimeRecording extends Component {
+	constructor(props) {
+		super(props)
+		this.postTimesheets = this.postTimesheets.bind(this)
+	}
+
 	state = {
 		begin: "",
 		end: "",

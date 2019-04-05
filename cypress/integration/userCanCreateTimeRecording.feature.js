@@ -1,3 +1,5 @@
+/// <reference types="Cypress" />
+
 describe("User can create time recording", () => {
 	it("successfully", () => {
 		cy.server();
