@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { saveTime } from "../modules/savetimesheet";
+import { saveTime } from "../modules/saveTimeSheet";
 import TimeInputForm from "./TimeInputForm";
 import { Form, Button, Grid } from "semantic-ui-react";
 
@@ -12,34 +12,49 @@ class SaveTimeRecording extends Component {
 	state = {
 		begin: "",
 		end: "",
-		saveTime: false
+		timeSaved: false,
+		errorMessage: ''
 	};
 
 	async postTimesheets() {
-		let response = await saveTime(this.state.begin, this.state.end);
-		this.setState({
-			saveTime: true
-		});
+		const response = await saveTime(this.state.begin, this.state.end);
+
+		if (response.status === 200) {
+			this.setState({
+				timeSaved: true
+			});
+		} else {
+			debugger;
+			this.setState({
+				errorMessage: 'Your time was not saved, make sure that you use the correct format'
+			})
+		}
 	}
 
 	onChange(event) {
 		this.setState({
-			[event.target.name]: event.target.value
+			[event.target.name]: event.target.value,
+			timeSaved: false
 		});
 	}
 
 	render() {
 		let saveButton;
 
-		if (!this.state.saveTime) {
+		if (!this.state.timeSaved) {
 			saveButton = (
-				<Button
-					style={{ background: "#46b395" }}
-					name="create"
-					onClick={this.postTimesheets.bind(this)}
-				>
-					Create
-				</Button>
+				<>
+					<Button
+						style={{ background: "#46b395" }}
+						name="create"
+						onClick={this.postTimesheets.bind(this)}
+					>
+						Create
+					</Button>
+					<p>
+						{this.state.errorMessage}
+					</p>
+				</>
 			);
 		} else {
 			saveButton = <p>Your time was saved</p>;

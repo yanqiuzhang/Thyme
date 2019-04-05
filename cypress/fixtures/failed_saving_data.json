@@ -1,0 +1,21 @@
+{
+	"code":400,
+	"message":"Validation Failed",
+	"errors":{
+		"children":{
+			"begin":{
+				"errors":["This value is not valid."]
+			},
+			"end":{
+				"errors":["This value is not valid."]
+			},
+			"customer":{},
+			"project":{},
+			"activity":{},
+			"description":{},
+			"fixedRate":{},
+			"hourlyRate":{},
+			"exported":{}
+		}
+	}
+}

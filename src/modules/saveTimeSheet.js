@@ -37,8 +37,8 @@ const saveTime = async (begin, end) => {
 		console.log(response);
 		return response;
 	} catch (error) {
-		console.error(error);
+		return error
 	}
-};
+};	
 
 export { saveTime };
