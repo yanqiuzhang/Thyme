@@ -3,14 +3,11 @@ import LoginForm from './LoginForm'
 import { authenticate } from '../Modules/Auth'
 
 class LoginLogic extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
+		state = {
+			errorMessage: '',
 			username: '',
 			password: '',
-			errorMessage: ''
 		}
-	}
 
 	onChange(event) {
 		this.setState({

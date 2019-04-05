@@ -1,6 +1,6 @@
 import React from 'react';
 import thymeLogo from '../image/logo.png'
-import '../style/style.css';
+import '../index.css';
 
 const LoginForm = (props) => {
 	return (
