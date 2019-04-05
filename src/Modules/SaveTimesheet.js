@@ -16,8 +16,8 @@ const saveTime = async (begin, end) => {
 		const response = await axios.post(
 			proxyUrl + apiUrl + "timesheets",
 			{
-				begin: moment(begin, "hh:mm").format('YYYY-MM-DD hh:mm'),
-				end: moment(end, "hh:mm").format('YYYY-MM-DD hh:mm'),
+				begin: moment(begin, "hh:mm").add(2, "hours").format('YYYY-MM-DD hh:mm'),
+				end: moment(end, "hh:mm").add(+2, "hours").format('YYYY-MM-DD hh:mm'),
 				customer: 1,
 				project: 1,
 				activity: 1,
@@ -30,6 +30,7 @@ const saveTime = async (begin, end) => {
 				mode: "cors"
 			}
 		);
+		console.log(response)
 		return response;
 	} catch (error) {
 		console.error(error);
