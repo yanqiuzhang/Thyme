@@ -21,7 +21,7 @@ class Menubar extends Component {
 		return (
 			<Grid columns={2}  style={{ background: "#354152"}}>
 				<Grid.Column
-					style={{ background: "#5bb695", width: "60px", height: "944px" }}
+					style={{ background: "#5bb695", width: "60px", height: "995px" }}
 				>
 					<Button
 						disabled={visible}
@@ -31,7 +31,6 @@ class Menubar extends Component {
 						<IoIosMenu size={30} />
 					</Button>
 				</Grid.Column>
-				<Grid.Column>
 					<Sidebar
 						as={Menu}
 						inverted
@@ -93,7 +92,6 @@ class Menubar extends Component {
 					<Segment basic>
 						<SaveTimeRecording />
 					</Segment>
-				</Grid.Column>
 			</Grid>
 		);
 	}
