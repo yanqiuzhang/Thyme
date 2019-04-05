@@ -1,11 +1,10 @@
 import axios from 'axios'
 
-const apiUrl = 'https://demo.kimai.org/api/'
-const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+const apiUrl = 'https://demo-stable.kimai.org/api/'
 
 const authenticate = async (username, password) => {
 	console.log('login here')
-	const path = apiUrl + proxyUrl + 'version';
+	const path = apiUrl + 'version';
 	let headers = {
 		"X-AUTH-USER": username,
 		"X-AUTH-TOKEN": password

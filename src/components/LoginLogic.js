@@ -30,7 +30,7 @@ class LoginLogic extends Component {
 
 	render() {
 		return (
-			<div>
+			<>
 				<LoginForm
 					inputChangeHandler={this.onChange.bind(this)}
 					clickLogin={this.onLogin.bind(this)}
@@ -38,7 +38,7 @@ class LoginLogic extends Component {
 				<p id="error_message">
 					{this.state.errorMessage}
 				</p>
-			</div>
+			</>
 		)
 	}
 }
