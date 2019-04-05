@@ -41,31 +41,31 @@ class SaveTimeRecording extends Component {
 		}
 		return (
 			<div id="time-block">
-			<Grid textAlign="center" columns={4}>
-				<Grid>
-					<Form.Group
-						widths="full"
-						style={{
-							background: "#DDDD",
-							paddingTop: "10%",
-							paddingBottom: "10%",
-							width: "1740px",
-							position: "absolute",
-						}}
-					>
-						<TimeInputForm
-						style={{
-						aligncontent: "left",}}
-							changeValue={this.onChange.bind(this)}
-							begin={this.state.begin}
-							end={this.state.end}
-						/>
-						{saveButton}
-					</Form.Group>
+				<Grid textAlign="center" columns={4}>
+					<Grid>
+						<Form.Group
+							width="full"
+							style={{
+								background: "#DDDD",
+								paddingTop: "10%",
+								paddingBottom: "10%",
+								width: "1740px",
+								position: "absolute"
+							}}
+						>
+							<TimeInputForm
+								style={{
+									aligncontent: "left"
+								}}
+								changeValue={this.onChange.bind(this)}
+								begin={this.state.begin}
+								end={this.state.end}
+							/>
+							{saveButton}
+						</Form.Group>
+					</Grid>
 				</Grid>
-			</Grid>
 			</div>
-
 		);
 	}
 }

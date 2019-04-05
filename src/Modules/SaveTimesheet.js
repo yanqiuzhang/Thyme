@@ -1,5 +1,5 @@
 import axios from "axios";
-import moment from 'moment';
+import moment from "moment";
 
 const saveTime = async (begin, end) => {
 	const apiUrl = "https://demo-stable.kimai.org/api/";
@@ -9,15 +9,19 @@ const saveTime = async (begin, end) => {
 		"X-AUTH-USER": "susan_super",
 		"X-AUTH-TOKEN": "api_kitten",
 		"Access-Control-Allow-Origin": "*",
-		'Accept': 'application/json',
-    'Content-Type': 'application/json',
+		Accept: "application/json",
+		"Content-Type": "application/json"
 	};
 	try {
 		const response = await axios.post(
 			proxyUrl + apiUrl + "timesheets",
 			{
-				begin: moment(begin, "hh:mm").add(2, "hours").format('YYYY-MM-DD hh:mm'),
-				end: moment(end, "hh:mm").add(+2, "hours").format('YYYY-MM-DD hh:mm'),
+				begin: moment(begin, "hh:mm")
+					.add(2, "hours")
+					.format("YYYY-MM-DD hh:mm"),
+				end: moment(end, "hh:mm")
+					.add(+2, "hours")
+					.format("YYYY-MM-DD hh:mm"),
 				customer: 1,
 				project: 1,
 				activity: 1,
@@ -30,7 +34,7 @@ const saveTime = async (begin, end) => {
 				mode: "cors"
 			}
 		);
-		console.log(response)
+		console.log(response);
 		return response;
 	} catch (error) {
 		console.error(error);

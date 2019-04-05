@@ -5,7 +5,7 @@ class App extends Component {
 	render() {
 		return (
 			<>
-				<Menubar style={{zIndex: "10"}} />
+				<Menubar style={{ zIndex: "10" }} />
 			</>
 		);
 	}
