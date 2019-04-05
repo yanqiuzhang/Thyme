@@ -19,7 +19,7 @@ class Menubar extends Component {
 		const { visible } = this.state;
 
 		return (
-			<Grid columns={2}>
+			<Grid columns={2}  style={{ background: "#354152"}}>
 				<Grid.Column
 					style={{ background: "#5bb695", width: "60px", height: "944px" }}
 				>
@@ -61,31 +61,31 @@ class Menubar extends Component {
 						<Menu.Item
 							className="item"
 							as="a"
-							style={{ background: "#dbdbdf", marginBottom: "10px" }}
+							style={{ background: "#dbdbdf", marginBottom: "10px", width: "80%", marginLeft: "10%" }}
 						>
 							Tab1
 						</Menu.Item>
 						<Menu.Item
 							as="a"
-							style={{ background: "#dbdbdf", marginBottom: "10px" }}
+							style={{ background: "#dbdbdf", marginBottom: "10px", width: "80%", marginLeft: "10%" }}
 						>
 							Tab2
 						</Menu.Item>
 						<Menu.Item
 							as="a"
-							style={{ background: "#dbdbdf", marginBottom: "10px" }}
+							style={{ background: "#dbdbdf", marginBottom: "10px", width: "80%", marginLeft: "10%" }}
 						>
 							Tab3
 						</Menu.Item>
 						<Menu.Item
 							as="a"
-							style={{ background: "#dbdbdf", marginBottom: "10px" }}
+							style={{ background: "#dbdbdf", marginBottom: "10px", width: "80%", marginLeft: "10%" }}
 						>
 							Tab4
 						</Menu.Item>
 						<Menu.Item
 							as="a"
-							style={{ background: "#dbdbdf", marginBottom: "10px" }}
+							style={{ background: "#dbdbdf", marginBottom: "10px", width: "80%", marginLeft: "10%" }}
 						>
 							Tab5
 						</Menu.Item>

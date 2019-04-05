@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { saveTime } from "../Modules/SaveTimesheet";
-import TimeInputForm  from "./TimeInputForm";
+import TimeInputForm from "./TimeInputForm";
 import { Form, Button, Grid } from "semantic-ui-react";
 
 class SaveTimeRecording extends Component {
@@ -14,7 +14,7 @@ class SaveTimeRecording extends Component {
 		let response = await saveTime(this.state.begin, this.state.end);
 		this.setState({
 			saveTime: true
-		})
+		});
 	}
 
 	onChange(event) {
@@ -28,7 +28,13 @@ class SaveTimeRecording extends Component {
 
 		if (!this.state.saveTime) {
 			saveButton = (
-				<Button style={{background: '#46b395'}} name="create" onClick={this.postTimesheets.bind(this)}>Create</Button>
+				<Button
+					style={{ background: "#46b395" }}
+					name="create"
+					onClick={this.postTimesheets.bind(this)}
+				>
+					Create
+				</Button>
 			);
 		} else {
 			saveButton = <p>Your time was saved</p>;
@@ -36,7 +42,14 @@ class SaveTimeRecording extends Component {
 		return (
 			<Grid textAlign="center" columns={4}>
 				<Grid>
-					<Form.Group widths="equal">
+					<Form.Group
+						widths="equal"
+						style={{
+							background: "#DDDD",
+							paddingTop: "10%",
+							paddingBottom: "10%"
+						}}
+					>
 						<TimeInputForm
 							changeValue={this.onChange.bind(this)}
 							begin={this.state.begin}
@@ -50,4 +63,4 @@ class SaveTimeRecording extends Component {
 	}
 }
 
-export default SaveTimeRecording
+export default SaveTimeRecording;
