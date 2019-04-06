@@ -5,15 +5,19 @@ import { Form, Button, Grid } from "semantic-ui-react";
 
 class SaveTimeRecording extends Component {
 	constructor(props) {
-		super(props)
-		this.postTimesheets = this.postTimesheets.bind(this)
+		super(props);
+		this.postTimesheets = this.postTimesheets.bind(this);
 	}
 
 	state = {
 		begin: "",
 		end: "",
-		timeSaved: false,
-		errorMessage: ''
+		errorMessage: "",
+		rate: "",
+		customer: "",
+		project: "",
+		activity: "",
+		timeSaved: false
 	};
 
 	async postTimesheets() {
@@ -24,10 +28,10 @@ class SaveTimeRecording extends Component {
 				timeSaved: true
 			});
 		} else {
-			debugger;
 			this.setState({
-				errorMessage: 'Your time was not saved, make sure that you use the correct format'
-			})
+				errorMessage:
+					"Your time was not saved, make sure that you use the correct format"
+			});
 		}
 	}
 
@@ -41,19 +45,36 @@ class SaveTimeRecording extends Component {
 	render() {
 		let saveButton;
 
+		const customers = [
+			{ text: "Customer 1", value: "1" },
+			{ text: "Customer 2", value: "2" },
+			{ text: "Customer 3", value: "3" },
+			{ text: "Customer 4", value: "4" }
+		]
+		const projects = [
+			{ text: "Project 1", value: "1" },
+			{ text: "Project 2", value: "2" },
+			{ text: "Project 3", value: "3" },
+			{ text: "Project 4", value: "4" }
+		]
+		const activities = [
+			{ text: "Activity 1", value: "1" },
+			{ text: "Activity 2", value: "2" },
+			{ text: "Activity 3", value: "3" },
+			{ text: "Activity 4", value: "4" }
+		]
+
 		if (!this.state.timeSaved) {
 			saveButton = (
 				<>
 					<Button
-						style={{ background: "#46b395", marginLeft: "10px"}}
+						style={{ background: "#46b395", marginLeft: "10px" }}
 						name="create"
 						onClick={this.postTimesheets.bind(this)}
 					>
 						Create
 					</Button>
-					<p>
-						{this.state.errorMessage}
-					</p>
+					<p>{this.state.errorMessage}</p>
 				</>
 			);
 		} else {
@@ -71,12 +92,12 @@ class SaveTimeRecording extends Component {
 								paddingBottom: "10%",
 								width: "1740px",
 								position: "absolute",
-								marginTop: "50%",
+								marginTop: "50%"
 							}}
 						>
 							<TimeInputForm
 								style={{
-									aligncontent: "left",
+									aligncontent: "left"
 								}}
 								changeValue={this.onChange.bind(this)}
 								begin={this.state.begin}

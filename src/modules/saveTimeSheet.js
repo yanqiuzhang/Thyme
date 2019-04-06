@@ -22,12 +22,12 @@ const saveTime = async (begin, end) => {
 				end: moment(end, "hh:mm")
 					.add(+2, "hours")
 					.format("YYYY-MM-DD hh:mm"),
-				customer: 1,
-				project: 1,
-				activity: 1,
-				description: "string",
-				fixedRate: "1.0",
-				hourlyRate: "1.0"
+				customer: customer,
+				project: project,
+				activity: activity,
+				description: description,
+				fixedRate: fixedRate,
+				hourlyRate: hourlyRate
 			},
 			{
 				headers: headers,
@@ -37,8 +37,8 @@ const saveTime = async (begin, end) => {
 		console.log(response);
 		return response;
 	} catch (error) {
-		return error
+		return error;
 	}
-};	
+};
 
 export { saveTime };
