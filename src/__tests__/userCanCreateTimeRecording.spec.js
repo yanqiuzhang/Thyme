@@ -1,37 +1,27 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import axios from "axios";
 import SaveTimeRecording from "../components/SaveTimeRecording";
-import { equal } from "assert";
-import { FormGroup } from 'semantic-ui-react';
-
-jest.mock("axios");
+import * as saveTimeSheet from "../modules/saveTimeSheet";
 
 describe("<SaveTimeRecording />", () => {
-	// it("should post times to backend", () => {
-	// 	const axiosSpy = jest.spyOn(axios, "post");
-	// 	shallow(<SaveTimeRecording />);
-	// 	expect(axiosSpy).toBeCalled();
-	// });
-	xit("renders time input form", () =>  {
-		const describedComponent = shallow(<SaveTimeRecording />)
-		console.log(describedComponent.debug())
-		expect(describedComponent.find("FormGroup")).toHaveLength(1)
-	})
 
-	it("calls postTimesheets when button is clicked", () => {
-		const describedComponent = mount(<SaveTimeRecording />)
-		// const instance = describedComponent.instance()
-		const postTimeSheetSpy = jest.spyOn(SaveTimeRecording.prototype,"postTimesheets")
-		console.log(postTimeSheetSpy)
-		console.log(describedComponent.debug())
-		describedComponent.find("button").simulate("click", {
-			target: {
-				value: "Create"
-			}
-		})
-		expect(postTimeSheetSpy).toBeCalled()
-	}
+    it("renders time input form", () => {
+        const describedComponent = shallow(<SaveTimeRecording />)
+        expect(describedComponent.find("FormGroup")).toHaveLength(1)
+    })
 
-	)
+    it("calls postTimesheets when button is clicked", () => {
+        const postTimesheetsSpy = jest.spyOn(SaveTimeRecording.prototype, 'postTimesheets');
+        const describedComponent = mount(<SaveTimeRecording />);
+        describedComponent.find('button').simulate('click');
+        expect(postTimesheetsSpy).toHaveBeenCalled();
+    })
+
+    it("calls saveTimeSheet.saveTime from postTimesheets", () => {
+        saveTimeSheet.saveTime = jest.fn()
+        const describedComponent = mount(<SaveTimeRecording />);
+        describedComponent.setState({ begin: '17:00', end: '17:30' })
+        describedComponent.instance().postTimesheets()
+        expect(saveTimeSheet.saveTime).toBeCalledWith('17:00', '17:30');
+    })
 });
