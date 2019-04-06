@@ -31,25 +31,25 @@ code {
 .user_input {
 	border-radius: 17px;
 	border: 1.5px solid black;
-	padding-left: 224px;
-	padding-right: 133px;
 	background-color: #354151;
 	padding-top: 6px;
 	padding-bottom: 6px;
 	color : white;
-	margin-top: 20px
+	margin-top: 20px;
+	text-align: center;
+  width: 520px;
 }
 
 .sign_in {
 	border: 1.5px solid #5cb695;
 	border-radius: 17px;
-	padding-left: 235px;
-	padding-right: 236px;
 	background-color: #5cb695;
 	padding-top: 7px;
 	padding-bottom: 7px;
 	color : white;
-	margin-top: 20px
+	margin-top: 20px;
+	text-align: center;
+  width: 520px;
 }
 
 .time{

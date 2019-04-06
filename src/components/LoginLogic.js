@@ -28,7 +28,7 @@ class LoginLogic extends Component {
 	render() {
 		return (
 			<>
-				<p id="error_message" style={{ fontSize: '20px', position: 'fixed', right: '44.2%', color: 'white', top: '480px' }}>
+				<p id="error_message" style={{ fontSize: '20px', position: 'fixed', right: '43.7%', color: 'white', top: '480px' }}>
 					{this.state.errorMessage}
 				</p>
 
