@@ -19,13 +19,11 @@ class App extends Component {
 			const user = JSON.parse(sessionStorage.current_user).username
 			return (
 				<div style={{ overflow: 'hidden' }}>
-					<div style={{ float: 'left', width: '400px' }}>
-						<Menubar />
+					<div>
+						<Menubar style={{ zIndex: "10" }} user={user} />
 					</div>
-					<div style={{ float: 'left', paddingLeft: '40px' }}>
-						<p id="login_message">
-							Welcome, {user}
-						</p>
+					<div>
+
 					</div>
 				</div>
 			)
@@ -44,8 +42,7 @@ class App extends Component {
 			<>
 				{this.isUserAuthenticated()}
 			</>
-		)
+		);
 	}
 }
-
 export default App;

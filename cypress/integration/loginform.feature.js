@@ -9,16 +9,17 @@ describe('Login form', () => {
 			url: 'https://demo-stable.kimai.org/api/version',
 			response: 'fixtures:successful_login.json',
 			headers: {
-				"X-AUTH-USER": "alecia_admin",
+				"X-AUTH-USER": "anna_admin",
 				"X-AUTH-TOKEN": "api_kitten"
 			}
 		})
 
 		cy.visit('http://localhost:3000')
-			.get('input[type=name]').type('alecia_admin')
+			.get('input[type=name]').type('anna_admin')
 			.get('input[type=password]').type('api_kitten')
 			.get('button[type=submit]').click()
-			.get('#login_message').should('contain', 'Welcome, alecia_admin')
+			.get('button[id=menuicon]').click('topLeft', { force: true })
+			.get('#login_message').should('contain', 'Welcome, ANNA_ADMIN')
 		})
 
 	it('User does not get successfully authenticated', () => {
