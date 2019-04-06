@@ -1,10 +1,10 @@
-body {
-	margin: 0;
-	padding: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-		sans-serif;
-	-webkit-font-smoothing: antialiased;
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
@@ -13,6 +13,46 @@ code {
 		monospace;
 }
 
-form {
-	margin-top: 10%;
+.form_div {
+	background-color: #354151;
+	height: 100vh;
+	margin: auto;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.thyme_logo {
+	width: 200px;
+	margin-top: 40px
+}
+
+.user_input {
+	border-radius: 17px;
+	border: 1.5px solid black;
+	background-color: #354151;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	color : white;
+	margin-top: 20px;
+	text-align: center;
+  width: 520px;
+}
+
+.sign_in {
+	border: 1.5px solid #5cb695;
+	border-radius: 17px;
+	background-color: #5cb695;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	color : white;
+	margin-top: 20px;
+	text-align: center;
+  width: 520px;
+}
+
+.time{
+	margin-left: 10px;
+	margin-right: 5px;
 }

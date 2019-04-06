@@ -45,7 +45,7 @@ class SaveTimeRecording extends Component {
 			saveButton = (
 				<>
 					<Button
-						style={{ background: "#46b395" }}
+						style={{ background: "#46b395", marginLeft: "10px"}}
 						name="create"
 						onClick={this.postTimesheets.bind(this)}
 					>
@@ -70,12 +70,13 @@ class SaveTimeRecording extends Component {
 								paddingTop: "10%",
 								paddingBottom: "10%",
 								width: "1740px",
-								position: "absolute"
+								position: "absolute",
+								marginTop: "50%",
 							}}
 						>
 							<TimeInputForm
 								style={{
-									aligncontent: "left"
+									aligncontent: "left",
 								}}
 								changeValue={this.onChange.bind(this)}
 								begin={this.state.begin}

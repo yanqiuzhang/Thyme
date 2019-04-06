@@ -5,8 +5,8 @@ import logo from "../image/image.png";
 import SaveTimeRecording from "./SaveTimeRecording";
 
 class Menubar extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			visible: false
 		};
@@ -24,6 +24,7 @@ class Menubar extends Component {
 					style={{ background: "#5bb695", width: "60px", height: "995px" }}
 				>
 					<Button
+					  id='menuicon'
 						disabled={visible}
 						onClick={this.handleShowClick}
 						style={{ background: "#5bb695", padding: 0, marginLeft: 7 }}
@@ -57,6 +58,10 @@ class Menubar extends Component {
 							}}
 						/>
 					</div>
+
+					<p id="login_message" style={{color: '#354151', textAlign: 'center'}}>
+						Welcome, {this.props.user.toUpperCase()}
+					</p>
 					<Menu.Item
 						className="item"
 						as="a"

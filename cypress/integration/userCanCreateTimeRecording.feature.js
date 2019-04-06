@@ -12,10 +12,13 @@ describe("User can create time recording", () => {
 				"X-AUTH-TOKEN": "api_kitten"
 			}
 		})
-		cy.visit("http://localhost:3000");
-		cy.get('input[name="begin"]').type("07:00");
-		cy.get('input[name="end"]').type("08:00");
-		cy.get('button[name="create"]').click();
+		cy.visit("http://localhost:3000")
+		cy.get('input[type=name]').type('anna_admin')
+		cy.get('input[type=password]').type('api_kitten')
+		cy.get('button[type=submit]').click()
+		cy.get('input[name="begin"]').type("07:00")
+		cy.get('input[name="end"]').type("08:00")
+		cy.get('button[name="create"]').click()
 		cy.contains('Your time was saved')
 	})
 
@@ -32,6 +35,9 @@ describe("User can create time recording", () => {
 			status: 400
 		})
 		cy.visit("http://localhost:3000");
+		cy.get('input[type=name]').type('anna_admin')
+		cy.get('input[type=password]').type('api_kitten')
+		cy.get('button[type=submit]').click()
 		cy.get('input[name="begin"]').type("abcd");
 		cy.get('input[name="end"]').type("abcd");
 		cy.get('button[name="create"]').click();
