@@ -21,7 +21,15 @@ class SaveTimeRecording extends Component {
 
 	async postTimesheets() {
 		const option = {
-			customer: this.state.customer
+			begin: this.state.begin,
+			end: this.state.customer,
+			errorMessage: this.state.errorMessage,
+			rate: this.state.rate,
+			customer: this.state.customer,
+			project: this.state.project,
+			activity: this.state.activity,
+			timeSasved: this.state.timeSaved
+
 		};
 		const response = await saveTime(this.state.begin, this.state.end);
 

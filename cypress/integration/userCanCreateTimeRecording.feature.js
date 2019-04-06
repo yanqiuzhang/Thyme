@@ -18,7 +18,7 @@ describe("User can create time recording", () => {
 		cy.get("button[type=submit]").click();
 		cy.get('input[name="begin"]').type("07:00");
 		cy.get('input[name="end"]').type("08:00");
-		cy.get(".customer > .dropdown").click();
+		cy.get("#customer > .dropdown").click();
 		cy.contains("Customer 1").click();
 		cy.get('button[name="create"]').click();
 		cy.contains("Your time was saved");
