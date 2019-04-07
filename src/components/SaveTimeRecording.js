@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { saveTime } from "../modules/saveTimeSheet";
 import TimeInputForm from "./TimeInputForm";
 import { Form, Button, Grid } from "semantic-ui-react";
+import ViewTimeRecording from './ViewTimeRecording'
 
 class SaveTimeRecording extends Component {
 	constructor(props) {
@@ -13,7 +14,8 @@ class SaveTimeRecording extends Component {
 		begin: "",
 		end: "",
 		timeSaved: false,
-		errorMessage: ''
+		errorMessage: '',
+		timesheets: null
 	};
 
 	async postTimesheets() {
@@ -21,7 +23,8 @@ class SaveTimeRecording extends Component {
 
 		if (response.status === 200) {
 			this.setState({
-				timeSaved: true
+				timeSaved: true,
+				timesheets: response.data
 			});
 		} else {
 			debugger;
@@ -85,6 +88,7 @@ class SaveTimeRecording extends Component {
 							{saveButton}
 						</Form.Group>
 					</Grid>
+					<ViewTimeRecording />
 				</Grid>
 			</div>
 		);
