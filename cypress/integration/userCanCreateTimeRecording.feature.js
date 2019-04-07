@@ -24,7 +24,7 @@ describe("User can create time recording", () => {
 		cy.contains("Your time was saved");
 	});
 
-	it("non successfully", () => {
+	it("unsuccessfully", () => {
 		cy.server();
 		cy.route({
 			method: "POST",
