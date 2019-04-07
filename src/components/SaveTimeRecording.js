@@ -87,7 +87,7 @@ class SaveTimeRecording extends Component {
 							{saveButton}
 						</Form.Group>
 					</Grid>
-					<ViewTimeRecording timesheets={this.state.timesheets} />
+	        <ViewTimeRecording timesheets={this.state.timesheets} />
 				</Grid>
 			</div>
 		);

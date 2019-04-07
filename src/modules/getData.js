@@ -1,7 +1,6 @@
-import axios from "axios";
-import moment from "moment";
+import axios from 'axios';
 
-const getData = async () => {
+const getData = async (end, begin) => {
 	const apiUrl = "https://demo.kimai.org/api/";
 	const path = apiUrl + 'version';
 
@@ -14,6 +13,16 @@ const getData = async () => {
 	};
 	try {
 		const response = await axios.get(path,
+			{
+				begin: '',
+				end: '',
+				customer: 1,
+				project: 1,
+				activity: 1,
+				description: "string",
+				fixedRate: " ",
+				hourlyRate: " "
+			},
 			{
 				headers: headers,
 				mode: "cors"
