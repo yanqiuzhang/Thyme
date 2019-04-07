@@ -10,27 +10,15 @@ class SaveTimeRecording extends Component {
 		this.state = {
 			begin: "",
 			end: "",
-			errorMessage: "",
-			rate: "",
 			customer: "",
 			project: "",
 			activity: "",
+			rate: "",
 			timeSaved: false
 		};
 	}
 
 	async postTimesheets() {
-		const option = {
-			begin: this.state.begin,
-			end: this.state.customer,
-			errorMessage: this.state.errorMessage,
-			rate: this.state.rate,
-			customer: this.state.customer,
-			project: this.state.project,
-			activity: this.state.activity,
-			timeSasved: this.state.timeSaved
-
-		};
 		const response = await saveTime(this.state.begin, this.state.end);
 
 		if (response.status === 200) {
@@ -68,22 +56,28 @@ class SaveTimeRecording extends Component {
 		let saveButton;
 
 		const customers = [
-			{ text: "Customer 1", option: "1" },
-			{ text: "Customer 2", option: "2" },
-			{ text: "Customer 3", option: "3" },
-			{ text: "Customer 4", option: "4" }
+			{ text: "Hammes-Kilback", option: "1" },
+			{ text: "Sawayn-Farrel", option: "2" },
+			{ text: "Scahefer and sons", option: "3" },
+			{ text: "Treutel Ltd", option: "4" }
 		];
 		const projects = [
-			{ text: "Project 1", option: "1" },
-			{ text: "Project 2", option: "2" },
-			{ text: "Project 3", option: "3" },
-			{ text: "Project 4", option: "4" }
+			{ text: "Advanced content-based functionalities", option: "149" },
+			{ text: "Ameliorated global internetsolution", option: "136" },
+			{ text: "Compatible 5thgeneration customerloyalty", option: "140" },
+			{ text: "De-engineered encompassing emulation", option: "134" },
+			{ text: "", option: "5" },
+			{ text: "", option: "6" },
+			{ text: "", option: "7" }
 		];
 		const activities = [
-			{ text: "Activity 1", option: "1" },
-			{ text: "Activity 2", option: "2" },
-			{ text: "Activity 3", option: "3" },
-			{ text: "Activity 4", option: "4" }
+			{ text: "", option: "1" },
+			{ text: "", option: "2" },
+			{ text: "", option: "3" },
+			{ text: "", option: "4" },
+			{ text: "", option: "5" },
+			{ text: "", option: "6" },
+			{ text: "", option: "7" }
 		];
 
 		if (!this.state.timeSaved) {

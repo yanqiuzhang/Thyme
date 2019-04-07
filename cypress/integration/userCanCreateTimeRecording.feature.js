@@ -19,7 +19,9 @@ describe("User can create time recording", () => {
 		cy.get('input[name="begin"]').type("07:00");
 		cy.get('input[name="end"]').type("08:00");
 		cy.get("#customer > .dropdown").click();
-		cy.contains("Customer 1").click();
+		cy.contains("Hammes-Kilback").click();
+		cy.get("#projects > .dropdown").click();
+		cy.contains("Advanced content-based functionalities").click();
 		cy.get('button[name="create"]').click();
 		cy.contains("Your time was saved");
 	});
