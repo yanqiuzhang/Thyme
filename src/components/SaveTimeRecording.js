@@ -115,18 +115,21 @@ class SaveTimeRecording extends Component {
 								options={customers}
 								id="customer"
 								selection
+								placeholder
 								onChange={(e, { option }) => this.handleCustomerChange(option)}
 							/>
 							<Dropdown
 								options={projects}
 								id="projects"
 								selection
+								placeholder
 								onChange={(e, { option }) => this.handleProjectChange(option)}
 							/>
 							<Dropdown
 								options={activities}
 								id="activity"
 								selection
+								placeholder
 								onChange={(e, { option }) => this.handleActivityChange(option)}
 							/>
 							<TimeInputForm
