@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getData } from '../modules/getData';
+// import { getData } from '../modules/getData';
 
 class ViewTimeRecording extends Component {
 	// state = {

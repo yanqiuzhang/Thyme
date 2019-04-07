@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const getData = async (end, begin) => {
 	const apiUrl = "https://demo.kimai.org/api/";
-	const path = apiUrl + 'version';
+	const path = apiUrl + 'timesheets';
 
 	let headers = {
 		"X-AUTH-USER": "susan_super",
