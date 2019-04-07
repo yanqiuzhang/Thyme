@@ -22,9 +22,6 @@ class App extends Component {
 					<div>
 						<Menubar style={{ zIndex: "10" }} user={user} />
 					</div>
-					<div>
-
-					</div>
 				</div>
 			)
 		} else {

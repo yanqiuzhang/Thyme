@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import { saveTime } from "../modules/saveTimeSheet";
-import TimeInputForm from "./TimeInputForm";
-import { Form, Button, Grid } from "semantic-ui-react";
+import React, { Component } from 'react';
+import { saveTime } from '../modules/saveTimeSheet';
+import TimeInputForm from './TimeInputForm';
+import { Form, Button, Grid } from 'semantic-ui-react';
+import ViewTimeRecording from './ViewTimeRecording'
 
 class SaveTimeRecording extends Component {
 	constructor(props) {
@@ -10,21 +11,21 @@ class SaveTimeRecording extends Component {
 	}
 
 	state = {
-		begin: "",
-		end: "",
+		begin: '',
+		end: '',
 		timeSaved: false,
-		errorMessage: ''
+		errorMessage: '',
+		timesheets: null
 	};
 
 	async postTimesheets() {
 		const response = await saveTime(this.state.begin, this.state.end);
-
 		if (response.status === 200) {
 			this.setState({
-				timeSaved: true
-			});
+				timeSaved: true,
+				timesheets: response.data
+			})
 		} else {
-			debugger;
 			this.setState({
 				errorMessage: 'Your time was not saved, make sure that you use the correct format'
 			})
@@ -45,9 +46,9 @@ class SaveTimeRecording extends Component {
 			saveButton = (
 				<>
 					<Button
-						style={{ background: "#46b395", marginLeft: "10px"}}
+						style={{ background: "#46b395", marginLeft: "10px" }}
 						name="create"
-						onClick={this.postTimesheets.bind(this)}
+						onClick={this.postTimesheets}
 					>
 						Create
 					</Button>
@@ -58,7 +59,8 @@ class SaveTimeRecording extends Component {
 			);
 		} else {
 			saveButton = <p>Your time was saved</p>;
-		}
+		};
+
 		return (
 			<div id="time-block">
 				<Grid textAlign="center" columns={4}>
@@ -85,6 +87,7 @@ class SaveTimeRecording extends Component {
 							{saveButton}
 						</Form.Group>
 					</Grid>
+					<ViewTimeRecording timesheets={this.state.timesheets} />
 				</Grid>
 			</div>
 		);
