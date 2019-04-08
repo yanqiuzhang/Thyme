@@ -1,0 +1,16 @@
+[
+  {
+    "id": 0,
+    "begin": "2019-04-08T08:31:19.111Z",
+    "end": "2019-04-08T08:31:19.111Z",
+    "duration": 0,
+    "rate": 0,
+    "description": "string",
+    "fixed_rate": 0,
+    "hourly_rate": 0,
+    "exported": true,
+    "activity": 0,
+    "project": 0,
+    "user": 0
+  }
+]

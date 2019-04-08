@@ -39,6 +39,6 @@ const saveTime = async (begin, end) => {
 	} catch (error) {
 		return error
 	}
-};	
+};
 
 export { saveTime };

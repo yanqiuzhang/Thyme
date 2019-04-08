@@ -12,7 +12,7 @@ class ViewTimeRecording extends Component {
 
 	async getTimesheets() {
 		const response = await getData(this.state.begin, this.state.end);
-		if (response.data === ture) {
+		if (response.data === true) {
 			this.setState({
 				timesheets: response.data
 			})
