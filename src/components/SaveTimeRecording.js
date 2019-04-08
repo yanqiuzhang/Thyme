@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { saveTime } from "../modules/saveTimeSheet";
 import TimeInputForm from "./TimeInputForm";
 import { Form, Button, Grid, Dropdown } from "semantic-ui-react";
+import { fetchCustomers, fetchProjects, fetchActivities } from "../modules/timeData";
 
 class SaveTimeRecording extends Component {
 	constructor(props) {
@@ -14,9 +15,24 @@ class SaveTimeRecording extends Component {
 			project: "",
 			activity: "",
 			rate: "",
-			timeSaved: false
+			timeSaved: false,
+			activities: [],
+			projects: [],
+			customers: []
 		};
 	}
+
+	async componentDidMount() {
+		const customers = await fetchCustomers();
+		const projects = await fetchProjects();
+		const activities = await fetchActivities();
+		this.setState({
+			activities: activities,
+			projects: projects,
+			customers: customers
+		})
+	}
+
 
 	async postTimesheets() {
 		const response = await saveTime(this.state.begin, this.state.end);
