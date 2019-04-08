@@ -154,10 +154,13 @@ class SaveTimeRecording extends Component {
 								paddingBottom: "10%",
 								width: "1740px",
 								position: "absolute",
-								marginTop: "50%"
+								marginTop: "70%"
 							}}
 						>
 							<Dropdown
+								style={{
+									marginLeft: "10px"
+								}}
 								options={customers}
 								id="customer"
 								selection
