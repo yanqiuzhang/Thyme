@@ -21,14 +21,18 @@ describe("<SaveTimeRecording />", () => {
 	});
 
 	it("calls saveTimeSheet.saveTime from postTimesheets", () => {
-		saveTimeSheet.saveTime.inputTimeForm = jest.fn();
+		saveTimeSheet.saveTime = jest.fn();
 		const describedComponent = mount(<SaveTimeRecording />);
-		const inputTimeForm = mount(<TimeInputForm />);
 		describedComponent.setState({ begin: "17:00", end: "17:30" });
 		describedComponent.instance().postTimesheets();
 		expect(saveTimeSheet.saveTime).toBeCalledWith("17:00", "17:30");
-		inputTimeForm.find({ rate: "25" });
-		describedComponent.instance().postTimesheets();
-		expect(TimeInputForm.TimeInputForm).toBeCalledWith("25");
 	});
+
+	it("calls timeInputForm from SaveTimeRecording", () => {
+		TimeInputForm.timeInputForm = jest.fn();
+		const describedComponent = mount(<TimeInputForm />);
+		describedComponent.find({rate: "50"});
+		describedComponent.instance();
+		expect(describedComponent.find("Input"))
+	})
 });

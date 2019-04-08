@@ -22,9 +22,9 @@ describe("User can create time recording", () => {
 		cy.contains("Advanced content-based functionalities").click();
 		cy.get('input[name="begin"]').type("07:00");
 		cy.get('input[name="end"]').type("08:00");
-		cy.get(':nth-child(9) > input').type("25");
+		cy.get(":nth-child(9) > input").type("25");
 		cy.get('button[name="create"]').click();
-		cy.contains("Your time was saved");
+		cy.get('p[name="save-message"]').should("contain", "Your time was saved");
 	});
 
 	it("unsuccessfully", () => {
@@ -43,10 +43,13 @@ describe("User can create time recording", () => {
 		cy.get("input[type=name]").type("anna_admin");
 		cy.get("input[type=password]").type("api_kitten");
 		cy.get("button[type=submit]").click();
+		cy.get("#projects > .dropdown").click();
+		cy.contains("Advanced content-based functionalities").click();
 		cy.get('input[name="begin"]').type("abcd");
 		cy.get('input[name="end"]').type("abcd");
 		cy.get('button[name="create"]').click();
-		cy.contains(
+		cy.get('p[name="error-message"]').should(
+			"contain",
 			"Your time was not saved, make sure that you use the correct format"
 		);
 	});

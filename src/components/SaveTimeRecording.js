@@ -90,11 +90,12 @@ class SaveTimeRecording extends Component {
 					>
 						Create
 					</Button>
-					<p>{this.state.errorMessage}</p>
+					<p name="error-message">{this.state.errorMessage}</p>
 				</>
 			);
 		} else {
-			saveButton = <p>Your time was saved</p>;
+
+			saveButton = <p name="save-message">Your time was saved</p>;
 		}
 		return (
 			<div id="time-block">
