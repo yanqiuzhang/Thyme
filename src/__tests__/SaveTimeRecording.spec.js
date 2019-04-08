@@ -2,7 +2,6 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import SaveTimeRecording from "../components/SaveTimeRecording";
 import * as saveTimeSheet from "../modules/saveTimeSheet";
-import TimeInputForm from "../components/TimeInputForm";
 
 describe("<SaveTimeRecording />", () => {
 	it("renders time input form", () => {
@@ -28,11 +27,37 @@ describe("<SaveTimeRecording />", () => {
 		expect(saveTimeSheet.saveTime).toBeCalledWith("17:00", "17:30");
 	});
 
-	it("calls timeInputForm from SaveTimeRecording", () => {
-		TimeInputForm.timeInputForm = jest.fn();
-		const describedComponent = mount(<TimeInputForm />);
-		describedComponent.find({rate: "50"});
-		describedComponent.instance();
-		expect(describedComponent.find("Input"))
+	it('dropdown onChange calls on handleCustomerChange', () => {
+		const handleCustomerChangeSpy = jest.spyOn(
+			SaveTimeRecording.prototype,
+			"handleCustomerChange"
+		);
+
+		const describedComponent = mount(<SaveTimeRecording />);
+
+		describedComponent.find("Dropdown[id='customer']").simulate('change', {
+			option: { value: "1" }
+		})
+		expect(handleCustomerChangeSpy).toHaveBeenCalled()
 	})
+
+	// it('dropdown onChange calls on handleProjectChange', () => {
+	// 	const handleProjectChangeSpy = jest.spyOn(
+	// 		SaveTimeRecording.prototype,
+	// 		"handleProjectChange"
+	// 	);
+
+	// 	const describedComponent = mount(<SaveTimeRecording />);
+
+	// })
+
+	// it('dropdown onChange calls on handleActivityChange', () => {
+	// 	const handleActivityChangeSpy = jest.spyOn(
+	// 		SaveTimeRecording.prototype,
+	// 		"handleActivityChange"
+	// 	);
+
+	// 	const describedComponent = mount(<SaveTimeRecording />);
+
+	// })
 });

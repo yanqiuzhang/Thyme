@@ -4,7 +4,7 @@ import '../index.css';
 
 const TimeInputForm = props => {
 	return (
-		<>
+		<div>
 			<label name="Start Time" className="time">Start Time</label>
 			<Input
 				placeholder="00:00"
@@ -23,7 +23,7 @@ const TimeInputForm = props => {
 				onChange={props.changeValue}
 				name="rate"
 			/>
-		</>
+		</div>
 	);
 };
 
