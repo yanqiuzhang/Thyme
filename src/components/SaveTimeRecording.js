@@ -67,11 +67,25 @@ class SaveTimeRecording extends Component {
 	}
 
 	handleCustomerChange(option) {
-		this.setState({ customer: option });
+		this.setState({ customer: option }, async () => {
+			const filteredProjects = await this.state.projects.filter(val => {
+				return val.customer === option;
+				debugger;
+			});
+			this.setState({ showProjectsDropdown: true, projects: filteredProjects });
+		});
 	}
 
 	handleProjectChange(option) {
-		this.setState({ project: option });
+		this.setState({ project: option }, async () => {
+			const filteredActivities = await this.state.activities.filter(val => {
+				return val.project === option;
+			});
+			this.setState({
+				showActivitiesDropdown: true,
+				activities: filteredActivities
+			});
+		});
 	}
 
 	handleActivityChange(option) {
@@ -106,7 +120,7 @@ class SaveTimeRecording extends Component {
 			activitiesDropdown = (
 				<Dropdown
 					options={activities}
-					id="projects"
+					id="activities"
 					selection
 					onChange={(e, { value }) => this.handleActivityChange(value)}
 				/>
@@ -148,7 +162,7 @@ class SaveTimeRecording extends Component {
 								options={customers}
 								id="customer"
 								selection
-								onChange={(e, {value}) => this.handleCustomerChange(value)}
+								onChange={(e, { value }) => this.handleCustomerChange(value)}
 							/>
 							{projectsDropdown}
 							{activitiesDropdown}
