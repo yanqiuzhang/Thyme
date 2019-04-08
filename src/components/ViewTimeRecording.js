@@ -24,16 +24,27 @@ class ViewTimeRecording extends Component {
 	// }
 
 	render() {
+
 		let timesheets = this.props.timesheets
-    console.log(timesheets)
-		return timesheets.map((item, index) => {
-			return (
-				<div key={index.id}>
-					<h1>{item.begin}</h1>
-					<h2>{item.end}</h2>
-				</div>
-			);
-		})
+		let dataIndex
+
+
+		if (timesheets != null) {
+			debugger
+      dataIndex = (
+        <div>
+          {timesheets.map(item => {
+            return <div key={item.id}>{item.start}</div>
+          })}
+        </div>
+      )
+		}
+
+		return (
+      <div>
+        {dataIndex}
+      </div>
+    )
 	}
 }
 
