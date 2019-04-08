@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getData = async (end, begin) => {
+const getData = async () => {
 	const apiUrl = "https://demo.kimai.org/api/";
 	const path = apiUrl + 'timesheets';
 
@@ -13,16 +13,6 @@ const getData = async (end, begin) => {
 	};
 	try {
 		const response = await axios.get(path,
-			{
-				begin: '',
-				end: '',
-				customer: 1,
-				project: 1,
-				activity: 1,
-				description: "string",
-				fixedRate: " ",
-				hourlyRate: " "
-			},
 			{
 				headers: headers,
 				mode: "cors"

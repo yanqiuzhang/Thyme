@@ -3,18 +3,18 @@ import React, { Component } from 'react'
 
 class ViewTimeRecording extends Component {
 	// state = {
-	// 	timesheets: null,
+	// 	timesheets: [],
 	// 	begin: '',
 	// 	end: '',
 	// 	errorMessage: '',
-	//  data: false
+	// 	response: false
 	// }
 
 	// async postTimesheets() {
 	// 	const response = await getData(this.state.begin, this.state.end);
-	// 	if (response.data === ture) {
+	// 	if (response === true) {
 	// 		this.setState({
-	// 			timesheets: response.data
+	// 			timesheets: response
 	// 		})
 	// 	} else {
 	// 		this.setState({
@@ -25,29 +25,15 @@ class ViewTimeRecording extends Component {
 
 	render() {
 		let timesheets = this.props.timesheets
-		let fetchData;
-
-		if (timesheets != null) {
-			debugger
-			fetchData = (
-				<div>
-					{timesheets.map((item, index) => {
-						return (
-							<div key={index.id}>
-								<h1>{item.begin}</h1>
-								<h2>{item.end}</h2>
-							</div>
-						);
-					})}
+    console.log(timesheets)
+		return timesheets.map((item, index) => {
+			return (
+				<div key={index.id}>
+					<h1>{item.begin}</h1>
+					<h2>{item.end}</h2>
 				</div>
-			)
-		}
-
-		return (
-			<div>
-				{fetchData}
-			</div>
-		)
+			);
+		})
 	}
 }
 

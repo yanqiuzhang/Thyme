@@ -15,7 +15,7 @@ class SaveTimeRecording extends Component {
 		end: '',
 		timeSaved: false,
 		errorMessage: '',
-		timesheets: null
+		timesheets: null,
 	};
 
 	async postTimesheets() {
@@ -23,7 +23,7 @@ class SaveTimeRecording extends Component {
 		if (response.status === 200) {
 			this.setState({
 				timeSaved: true,
-				timesheets: response.data
+				timesheets: response
 			})
 		} else {
 			this.setState({
@@ -63,32 +63,34 @@ class SaveTimeRecording extends Component {
 
 		return (
 			<div id="time-block">
-				<Grid textAlign="center" columns={4}>
-					<Grid>
-						<Form.Group
-							width="full"
-							style={{
-								background: "#DDDD",
-								paddingTop: "10%",
-								paddingBottom: "10%",
-								width: "1740px",
-								position: "absolute",
-								marginTop: "50%",
-							}}
-						>
-							<TimeInputForm
+					<Grid textAlign="center" columns={4}>
+						<Grid>
+							<Form.Group
+								width="full"
 								style={{
-									aligncontent: "left",
+									background: "#DDDD",
+									paddingTop: "10%",
+									paddingBottom: "10%",
+									width: "1740px",
+									position: "absolute",
+									marginTop: "50%",
 								}}
-								changeValue={this.onChange.bind(this)}
-								begin={this.state.begin}
-								end={this.state.end}
-							/>
-							{saveButton}
-						</Form.Group>
+							>
+								<TimeInputForm
+									style={{
+										aligncontent: "left",
+									}}
+									changeValue={this.onChange.bind(this)}
+									begin={this.state.begin}
+									end={this.state.end}
+								/>
+								{saveButton}
+							</Form.Group>
+						</Grid>
 					</Grid>
-	        <ViewTimeRecording timesheets={this.state.timesheets} />
-				</Grid>
+				<div>
+					<ViewTimeRecording timesheets={this.state.timesheets} />
+				</div>
 			</div>
 		);
 	}
