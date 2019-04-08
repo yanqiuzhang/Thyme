@@ -70,7 +70,6 @@ class SaveTimeRecording extends Component {
 		this.setState({ customer: option }, async () => {
 			const filteredProjects = await this.state.projects.filter(val => {
 				return val.customer === option;
-				debugger;
 			});
 			this.setState({ showProjectsDropdown: true, projects: filteredProjects });
 		});
@@ -106,7 +105,7 @@ class SaveTimeRecording extends Component {
 			return { text: val.name, value: val.id };
 		});
 
-		if (this.state.projectsDropdown === true) {
+		if (this.state.showProjectsDropdown === true) {
 			projectsDropdown = (
 				<Dropdown
 					options={projects}
@@ -116,11 +115,11 @@ class SaveTimeRecording extends Component {
 				/>
 			);
 		}
-		if (this.state.activitiesDropdown === true) {
+		if (this.state.showActivitiesDropdown === true) {
 			activitiesDropdown = (
 				<Dropdown
 					options={activities}
-					id="activities"
+					id="activity"
 					selection
 					onChange={(e, { value }) => this.handleActivityChange(value)}
 				/>
