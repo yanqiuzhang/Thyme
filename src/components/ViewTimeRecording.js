@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { getData } from '../modules/getData';
+import ViewTimeForm from './ViewTimeForm'
 
 class ViewTimeRecording extends Component {
 	state = {
@@ -7,42 +8,40 @@ class ViewTimeRecording extends Component {
 		begin: '',
 		end: '',
 		errorMessage: '',
-		data: false
+	}
+
+	componentDidMount() {
+		this.getTimesheets()
 	}
 
 	async getTimesheets() {
-		const response = await getData(this.state.begin, this.state.end);
-		if (response.data === true) {
+		const response = await getData();
+		if (response.status === 200) {
 			this.setState({
 				timesheets: response.data
 			})
 		} else {
-			this.setState({
-				errorMessage: 'error'
-			})
+			console.log("response error")
 		}
 	}
 
+
 	render() {
 		let timesheets = this.state.timesheets
-		let fetchData;
-
+		let fetchData
 		if (timesheets != null) {
-			debugger
 			fetchData = (
 				<div>
-					{timesheets.map((item, index) => {
-						return (
-							<div key={index.id}>
-								<h1>{item.begin}</h1>
-								<h2>{item.end}</h2>
-							</div>
-						);
-					})}
+					<ViewTimeForm
+					timesheets={this.state.timesheets}
+					/>
 				</div>
 			)
+		} else {
+			console.log("error")
 		}
 
+		console.log(fetchData)
 		return (
 			<div>
 				{fetchData}
@@ -52,4 +51,5 @@ class ViewTimeRecording extends Component {
 }
 
 export default ViewTimeRecording
+
 

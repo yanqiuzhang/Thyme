@@ -3,6 +3,7 @@ import { Button, Grid, Menu, Sidebar, Segment } from "semantic-ui-react";
 import { IoIosMenu } from "react-icons/io";
 import logo from "../image/image.png";
 import SaveTimeRecording from "./SaveTimeRecording";
+import ViewTimeRecording from './ViewTimeRecording'
 
 class Menubar extends Component {
 	constructor(props) {
@@ -24,7 +25,7 @@ class Menubar extends Component {
 					style={{ background: "#5bb695", width: "60px", height: "995px" }}
 				>
 					<Button
-					  id='menuicon'
+						id='menuicon'
 						disabled={visible}
 						onClick={this.handleShowClick}
 						style={{ background: "#5bb695", padding: 0, marginLeft: 7 }}
@@ -59,7 +60,7 @@ class Menubar extends Component {
 						/>
 					</div>
 
-					<p id="login_message" style={{color: '#354151', textAlign: 'center'}}>
+					<p id="login_message" style={{ color: '#354151', textAlign: 'center' }}>
 						Welcome, {this.props.user.toUpperCase()}
 					</p>
 					<Menu.Item
@@ -119,9 +120,16 @@ class Menubar extends Component {
 						Tab5
 					</Menu.Item>
 				</Sidebar>
-				<Segment basic>
-					<SaveTimeRecording />
-				</Segment>
+				<div >
+					<Segment basic>
+						<SaveTimeRecording />
+					</Segment>
+				</div>
+				<div style={{ paddingTop: '70px' }}>
+					<Segment basic>
+						<ViewTimeRecording />
+					</Segment>
+				</div>
 			</Grid>
 		);
 	}

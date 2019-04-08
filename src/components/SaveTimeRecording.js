@@ -86,7 +86,6 @@ class SaveTimeRecording extends Component {
 							{saveButton}
 						</Form.Group>
 					</Grid>
-					<ViewTimeRecording />
 				</Grid>
 			</div>
 		);

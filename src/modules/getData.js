@@ -6,17 +6,13 @@ const getData = async () => {
 
 	let headers = {
 		"X-AUTH-USER": "susan_super",
-		"X-AUTH-TOKEN": "api_kitten"
-		// "Access-Control-Allow-Origin": "*",
-		// Accept: "application/json",
-		// "Content-Type": "application/json"
+		"X-AUTH-TOKEN": "api_kitten",
 	};
 	try {
 		const response = await axios.get(path, {
 			headers: headers,
 			mode: "cors"
 		});
-		console.log(response);
 		return response;
 	} catch (error) {
 		return error;

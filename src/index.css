@@ -56,3 +56,17 @@ code {
 	margin-left: 10px;
 	margin-right: 5px;
 }
+
+.itemTitle{
+	border: 1.5px solid #354151;
+	border-radius: 2px;
+	color: white;
+	float: left;
+	padding: 10px;
+	margin-left: 20px;
+	background-color: #5cb695;
+}
+
+.viewDiv{
+	width: 1000px;
+}
