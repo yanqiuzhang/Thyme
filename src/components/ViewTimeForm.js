@@ -24,10 +24,7 @@ class ViewTimeForm extends Component {
 			},
 			{
 				name: "ACTIVITY"
-			},
-			// {
-			// 	name: "CUSTOMER"
-			// },
+			}
 		]
 
 		return (
@@ -44,7 +41,7 @@ class ViewTimeForm extends Component {
 				<div>
 					{timesheets.map((item, index) => {
 						return (
-							<div key={index}>
+							<div key={index} className="dataDiv">
 								<label className="itemData">{ moment(item.begin).tz('Europe/Stockholm').format('YYYY-MM-DD HH:mm A') } </label>
 								<label className="itemData">{ moment(item.end).tz('Europe/Stockholm').format('YYYY-MM-DD HH:mm A') } </label>
 								<label className="itemData">{item.duration}</label>

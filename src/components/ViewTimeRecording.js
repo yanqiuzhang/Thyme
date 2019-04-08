@@ -21,7 +21,10 @@ class ViewTimeRecording extends Component {
 		const response = await getData();
 		if (response.status === 200) {
 			this.setState({
-				timesheets: response.data
+				timesheets: response.data,
+				// timesheets: response.data.project.filter(val => {
+				// 	return val.project === 70;
+				// })
 			})
 		} else {
 			console.log("response error")
