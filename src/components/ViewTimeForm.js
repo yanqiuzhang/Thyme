@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../index.css';
+import moment from 'moment-timezone';
 
 class ViewTimeForm extends Component {
 	constructor(props) {
@@ -10,9 +11,6 @@ class ViewTimeForm extends Component {
 		const timesheets = this.props.timesheets
 		const items = [
 			{
-				name: "PROJECT"
-			},
-			{
 				name: "START TIME"
 			},
 			{
@@ -22,8 +20,14 @@ class ViewTimeForm extends Component {
 				name: "DURATION"
 			},
 			{
+				name: "PROJECT"
+			},
+			{
 				name: "ACTIVITY"
 			},
+			// {
+			// 	name: "CUSTOMER"
+			// },
 		]
 
 		return (
@@ -41,8 +45,11 @@ class ViewTimeForm extends Component {
 					{timesheets.map((item, index) => {
 						return (
 							<div key={index}>
-								<label>{item.begin}</label>
-								<label>{item.end}</label>
+								<label className="itemData">{ moment(item.begin).tz('Europe/Stockholm').format('YYYY-MM-DD HH:mm A') } </label>
+								<label className="itemData">{ moment(item.end).tz('Europe/Stockholm').format('YYYY-MM-DD HH:mm A') } </label>
+								<label className="itemData">{item.duration}</label>
+								<label className="itemProject">{item.project}</label>
+								<label className="itemActivity">{item.activity}</label>
 							</div>
 						);
 					})}

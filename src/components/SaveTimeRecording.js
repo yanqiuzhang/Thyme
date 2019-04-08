@@ -46,7 +46,7 @@ class SaveTimeRecording extends Component {
 			saveButton = (
 				<>
 					<Button
-						style={{ background: "#46b395", marginLeft: "10px"}}
+						style={{ background: "#5cb695", marginLeft: "10px"}}
 						name="create"
 						onClick={this.postTimesheets.bind(this)}
 					>

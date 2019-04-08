@@ -7,6 +7,9 @@ class ViewTimeRecording extends Component {
 		timesheets: null,
 		begin: '',
 		end: '',
+		customer: '',
+		project: '',
+		activity: '',
 		errorMessage: '',
 	}
 

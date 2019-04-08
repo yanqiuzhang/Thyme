@@ -63,10 +63,30 @@ code {
 	color: white;
 	float: left;
 	padding: 10px;
-	margin-left: 20px;
+	margin-right: 40px;
+	margin-left: 45px;
 	background-color: #5cb695;
 }
 
 .viewDiv{
 	width: 1000px;
+}
+
+.itemData{
+	margin-right: 50px;
+	padding-right: 10px;
+	padding-left: 20px;
+}
+
+.itemProject{
+	margin-left: 40px;
+	padding-right: 10px;
+	padding-left: 20px;
+	/* vertical-align: super; */
+}
+
+.itemActivity{
+	margin-left: 5px;
+	padding-right: 10px;
+	padding-left: 20px;
 }
