@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import { saveTime } from "../modules/saveTimeSheet";
 import TimeInputForm from "./TimeInputForm";
 import { Form, Button, Grid, Dropdown } from "semantic-ui-react";
-import { fetchCustomers, fetchProjects, fetchActivities } from "../modules/timeData";
+import {
+	fetchCustomers,
+	fetchProjects,
+	fetchActivities
+} from "../modules/timeData";
 
 class SaveTimeRecording extends Component {
 	constructor(props) {
@@ -18,7 +22,9 @@ class SaveTimeRecording extends Component {
 			timeSaved: false,
 			activities: [],
 			projects: [],
-			customers: []
+			customers: [],
+			showProjectsDropdown: false,
+			showActivitiesDropdown: false
 		};
 	}
 
@@ -30,13 +36,17 @@ class SaveTimeRecording extends Component {
 			activities: activities,
 			projects: projects,
 			customers: customers
-		})
+		});
 	}
 
-
 	async postTimesheets() {
-		const response = await saveTime(this.state.begin, this.state.end);
-
+		const response = await saveTime(
+			this.state.begin,
+			this.state.end,
+			this.state.customer,
+			this.state.project,
+			this.state.activity
+		);
 		if (response.status === 200) {
 			this.setState({
 				timeSaved: true
@@ -70,31 +80,38 @@ class SaveTimeRecording extends Component {
 
 	render() {
 		let saveButton;
+		let projectsDropdown;
+		let activitiesDropdown;
+		const customers = this.state.customers.map(val => {
+			return { text: val.name, value: val.id };
+		});
+		const projects = this.state.projects.map(val => {
+			return { text: val.name, value: val.id };
+		});
+		const activities = this.state.activities.map(val => {
+			return { text: val.name, value: val.id };
+		});
 
-		const customers = [
-			{ text: "Hammes-Kilback", option: "1" },
-			{ text: "Sawayn-Farrel", option: "2" },
-			{ text: "Scahefer and sons", option: "3" },
-			{ text: "Treutel Ltd", option: "4" }
-		];
-		const projects = [
-			{ text: "Advanced content-based functionalities", option: "149" },
-			{ text: "Ameliorated global internetsolution", option: "136" },
-			{ text: "Compatible 5thgeneration customerloyalty", option: "140" },
-			{ text: "De-engineered encompassing emulation", option: "134" },
-			{ text: "", option: "5" },
-			{ text: "", option: "6" },
-			{ text: "", option: "7" }
-		];
-		const activities = [
-			{ text: "", option: "1" },
-			{ text: "", option: "2" },
-			{ text: "", option: "3" },
-			{ text: "", option: "4" },
-			{ text: "", option: "5" },
-			{ text: "", option: "6" },
-			{ text: "", option: "7" }
-		];
+		if (this.state.projectsDropdown === true) {
+			projectsDropdown = (
+				<Dropdown
+					options={projects}
+					id="projects"
+					selection
+					onChange={(e, { value }) => this.handleProjectChange(value)}
+				/>
+			);
+		}
+		if (this.state.activitiesDropdown === true) {
+			activitiesDropdown = (
+				<Dropdown
+					options={activities}
+					id="projects"
+					selection
+					onChange={(e, { value }) => this.handleActivityChange(value)}
+				/>
+			);
+		}
 
 		if (!this.state.timeSaved) {
 			saveButton = (
@@ -110,7 +127,6 @@ class SaveTimeRecording extends Component {
 				</>
 			);
 		} else {
-
 			saveButton = <p name="save-message">Your time was saved</p>;
 		}
 		return (
@@ -132,23 +148,10 @@ class SaveTimeRecording extends Component {
 								options={customers}
 								id="customer"
 								selection
-								placeholder
-								onChange={(e, { option }) => this.handleCustomerChange(option)}
+								onChange={(e, {value}) => this.handleCustomerChange(value)}
 							/>
-							<Dropdown
-								options={projects}
-								id="projects"
-								selection
-								placeholder
-								onChange={(e, { option }) => this.handleProjectChange(option)}
-							/>
-							<Dropdown
-								options={activities}
-								id="activity"
-								selection
-								placeholder
-								onChange={(e, { option }) => this.handleActivityChange(option)}
-							/>
+							{projectsDropdown}
+							{activitiesDropdown}
 							<TimeInputForm
 								style={{
 									aligncontent: "left"
