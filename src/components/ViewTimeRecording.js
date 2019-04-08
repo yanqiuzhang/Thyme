@@ -1,30 +1,30 @@
 import React, { Component } from 'react'
-// import { getData } from '../modules/getData';
+import { getData } from '../modules/getData';
 
 class ViewTimeRecording extends Component {
-	// state = {
-	// 	timesheets: null,
-	// 	begin: '',
-	// 	end: '',
-	// 	errorMessage: '',
-	//  data: false
-	// }
+	state = {
+		timesheets: null,
+		begin: '',
+		end: '',
+		errorMessage: '',
+		data: false
+	}
 
-	// async postTimesheets() {
-	// 	const response = await getData(this.state.begin, this.state.end);
-	// 	if (response.data === ture) {
-	// 		this.setState({
-	// 			timesheets: response.data
-	// 		})
-	// 	} else {
-	// 		this.setState({
-	// 			errorMessage: 'error'
-	// 		})
-	// 	}
-	// }
+	async getTimesheets() {
+		const response = await getData(this.state.begin, this.state.end);
+		if (response.data === ture) {
+			this.setState({
+				timesheets: response.data
+			})
+		} else {
+			this.setState({
+				errorMessage: 'error'
+			})
+		}
+	}
 
 	render() {
-		let timesheets = this.props.timesheets
+		let timesheets = this.state.timesheets
 		let fetchData;
 
 		if (timesheets != null) {

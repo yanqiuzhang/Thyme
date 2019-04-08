@@ -15,7 +15,6 @@ class SaveTimeRecording extends Component {
 		end: "",
 		timeSaved: false,
 		errorMessage: '',
-		timesheets: null
 	};
 
 	async postTimesheets() {
@@ -24,7 +23,6 @@ class SaveTimeRecording extends Component {
 		if (response.status === 200) {
 			this.setState({
 				timeSaved: true,
-				timesheets: response.data
 			});
 		} else {
 			debugger;
@@ -88,7 +86,7 @@ class SaveTimeRecording extends Component {
 							{saveButton}
 						</Form.Group>
 					</Grid>
-					<ViewTimeRecording timesheets={this.state.timesheets} />
+					<ViewTimeRecording />
 				</Grid>
 			</div>
 		);

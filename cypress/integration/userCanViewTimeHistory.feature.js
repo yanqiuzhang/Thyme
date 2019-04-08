@@ -5,7 +5,7 @@ describe("User can view history of time recordings", () => {
 		cy.server();
 		cy.route({
 			method: 'GET',
-			url: 'https://demo-stable.kimai.org/api/timesheets',
+			url: 'https://demo.kimai.org/api/timesheets',
 			response: 'fixtures:save_data.json',
 			headers: {
 				"X-AUTH-USER": "susan_super",
@@ -19,7 +19,6 @@ describe("User can view history of time recordings", () => {
 		cy.get('input[name="begin"]').type("07:00")
 		cy.get('input[name="end"]').type("08:00")
 		cy.get('button[name="create"]').click()
-		cy.contains('Your time was saved')
 		cy.contains('07:00')
 		cy.contains('08:00')
 	})
