@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { saveTime } from "../modules/saveTimeSheet";
 import TimeInputForm from "./TimeInputForm";
-import { Form, Button, Grid, Dropdown } from "semantic-ui-react";
+import { Segment, Button, Grid, Dropdown } from "semantic-ui-react";
 import {
 	fetchCustomers,
 	fetchProjects,
@@ -23,8 +23,8 @@ class SaveTimeRecording extends Component {
 			activities: [],
 			projects: [],
 			customers: [],
-			showProjectsDropdown: false,
-			showActivitiesDropdown: false
+			showProjectsDropdown: true,
+			showActivitiesDropdown: true
 		};
 	}
 
@@ -107,22 +107,30 @@ class SaveTimeRecording extends Component {
 
 		if (this.state.showProjectsDropdown === true) {
 			projectsDropdown = (
-				<Dropdown
-					options={projects}
-					id="projects"
-					selection
-					onChange={(e, { value }) => this.handleProjectChange(value)}
-				/>
+				// <label name="End Time" className="time">
+				// 	Project
+					<Dropdown
+						options={projects}
+						placeholder="Project"
+						id="projects"
+						selection
+						onChange={(e, { value }) => this.handleProjectChange(value)}
+					/>
+				// </label>
 			);
 		}
 		if (this.state.showActivitiesDropdown === true) {
 			activitiesDropdown = (
-				<Dropdown
-					options={activities}
-					id="activity"
-					selection
-					onChange={(e, { value }) => this.handleActivityChange(value)}
-				/>
+				// <label name="End Time" className="time">
+				// 	Activity
+					<Dropdown
+						options={activities}
+						placeholder="Activity"
+						id="activity"
+						selection
+						onChange={(e, { value }) => this.handleActivityChange(value)}
+					/>
+				// </label>
 			);
 		}
 
@@ -144,40 +152,55 @@ class SaveTimeRecording extends Component {
 		}
 		return (
 			<>
-				<Grid centered columns={2}
-					style={{ marginLeft: "20%"}}
+				<Grid
+					columns="equal"
+					textAlign="center"
+					style={{
+						background: "#DDDD",
+						paddingTop: "2%",
+						paddingBottom: "2%",
+						textAlign: "center",
+						width: "1300px"
+					}}
 				>
-					<Form.Group
-						width="equal"
-						style={{
-							background: "#DDDD",
-							paddingTop: "2%",
-							paddingBottom: "2%",
-							textAlign: "center",
-							width: "1300px"
-						}}
-					>
-						<Dropdown
-							style={{
-								marginLeft: "10px"
-							}}
-							options={customers}
-							id="customer"
-							selection
-							onChange={(e, { value }) => this.handleCustomerChange(value)}
-						/>
-						{projectsDropdown}
-						{activitiesDropdown}
-						<TimeInputForm
-							style={{
-								aligncontent: "left"
-							}}
-							changeValue={this.onChange.bind(this)}
-							begin={this.state.begin}
-							end={this.state.end}
-						/>
-						{saveButton}
-					</Form.Group>
+					<Grid.Column>
+						<Segment>
+							{/* <label name="End Time" className="time">
+								Customer */}
+								<Dropdown
+									style={{
+										marginLeft: "10px"
+									}}
+									options={customers}
+									placeholder="Customer"
+									id="customer"
+									selection
+									onChange={(e, { value }) => this.handleCustomerChange(value)}
+								/>
+							{/* </label> */}
+						</Segment>
+					</Grid.Column>
+					<Grid.Column>
+						<Segment>{projectsDropdown}</Segment>
+					</Grid.Column>
+					<Grid.Column>
+						<Segment>{activitiesDropdown}</Segment>
+					</Grid.Column>
+					<Grid.Column>
+						<Segment>
+							<TimeInputForm
+								style={{
+									aligncontent: "left"
+								}}
+								changeValue={this.onChange.bind(this)}
+								begin={this.state.begin}
+								end={this.state.end}
+							/>
+						</Segment>
+					</Grid.Column>
+					<Grid.Column>
+						<Segment>{saveButton}</Segment>
+					</Grid.Column>
 				</Grid>
 			</>
 		);
