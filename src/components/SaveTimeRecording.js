@@ -144,39 +144,41 @@ class SaveTimeRecording extends Component {
 		}
 		return (
 			<>
-				<Form.Group
-					width="full"
-					style={{
-						background: "#DDDD",
-						paddingTop: "10%",
-						paddingBottom: "10%",
-						width: "1600px",
-						position: "absolute",
-						marginTop: "80%",
-						textAlign: "center"
-					}}
+				<Grid centered columns={2}
+					style={{ marginLeft: "20%"}}
 				>
-					<Dropdown
+					<Form.Group
+						width="equal"
 						style={{
-							marginLeft: "10px"
+							background: "#DDDD",
+							paddingTop: "2%",
+							paddingBottom: "2%",
+							textAlign: "center",
+							width: "1300px"
 						}}
-						options={customers}
-						id="customer"
-						selection
-						onChange={(e, { value }) => this.handleCustomerChange(value)}
-					/>
-					{projectsDropdown}
-					{activitiesDropdown}
-					<TimeInputForm
-						style={{
-							aligncontent: "left"
-						}}
-						changeValue={this.onChange.bind(this)}
-						begin={this.state.begin}
-						end={this.state.end}
-					/>
-					{saveButton}
-				</Form.Group>
+					>
+						<Dropdown
+							style={{
+								marginLeft: "10px"
+							}}
+							options={customers}
+							id="customer"
+							selection
+							onChange={(e, { value }) => this.handleCustomerChange(value)}
+						/>
+						{projectsDropdown}
+						{activitiesDropdown}
+						<TimeInputForm
+							style={{
+								aligncontent: "left"
+							}}
+							changeValue={this.onChange.bind(this)}
+							begin={this.state.begin}
+							end={this.state.end}
+						/>
+						{saveButton}
+					</Form.Group>
+				</Grid>
 			</>
 		);
 	}
