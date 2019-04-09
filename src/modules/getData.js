@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getData = async () => {
+const getTimesheets = async () => {
 	const apiUrl = "https://demo.kimai.org/api/";
 	const path = apiUrl + "timesheets";
 
@@ -19,4 +19,4 @@ const getData = async () => {
 	}
 };
 
-export { getData };
+export { getTimesheets };

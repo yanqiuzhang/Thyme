@@ -31,9 +31,9 @@ class ViewTimeForm extends Component {
 		return (
 			<div className="viewDiv">
 				<div>
-					{items.map(item => {
+					{items.map((item, index) => {
 						return (
-							<div>
+							<div key={index} >
 								<label className="itemTitle">{item.name}</label>
 							</div>
 						);
@@ -41,7 +41,7 @@ class ViewTimeForm extends Component {
 				</div>
 				<div>
 				<div className="timesheet">
-					{timesheets.map((item, index) => {
+				{timesheets.map((item, index) => {
 						return (
 							<div key={index} className="dataDiv">
 								<label className="itemData">
@@ -55,20 +55,12 @@ class ViewTimeForm extends Component {
 										.format("YYYY-MM-DD HH:mm A")}{" "}
 								</label>
 								<label className="itemData">{item.duration}</label>
+								<label className="itemData">{item.project}</label>
 								<label className="itemActivity">{item.activity}</label>
 							</div>
 						);
 					})}
 				</div>
-				<div>
-					{projectName.map((item, index) => {
-						return (
-							<div key={index} className="dataDiv">
-								<label className="itemProject">{item.name}</label>
-							</div>
-						);
-					})}
-					</div>
 				</div>
 			</div>
 		);

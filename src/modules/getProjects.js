@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getSpecificProjectName = async (id) => {
+const getProjects= async (id) => {
 	const apiUrl = "https://demo.kimai.org/api/";
 	const path = apiUrl + 'projects/${id}';
 
@@ -19,4 +19,4 @@ const getSpecificProjectName = async (id) => {
 	}
 };
 
-export { getSpecificProjectName };
+export { getProjects };
