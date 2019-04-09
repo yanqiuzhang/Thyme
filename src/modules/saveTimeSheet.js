@@ -1,7 +1,7 @@
 import axios from "axios";
 import moment from "moment";
 
-const saveTime = async (begin, end, customer, project, activity, rate) => {
+const saveTime = async (begin, end, customer, project, activity, rate, description) => {
 	const apiUrl = "https://demo-stable.kimai.org/api/";
 	const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
@@ -25,7 +25,7 @@ const saveTime = async (begin, end, customer, project, activity, rate) => {
 				customer: customer,
 				project: project,
 				activity: activity,
-				description: "string",
+				description: description,
 				fixedRate: rate,
 				hourlyRate: rate
 			},

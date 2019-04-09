@@ -44,14 +44,15 @@ describe("User can create time recording", () => {
 		cy.get("input[type=password]").type("api_kitten");
 		cy.get("button[type=submit]").click();
 		cy.get("#customer > .dropdown").click();
-		cy.contains("Borer Ltd").click();
+		cy.contains("Altenwerth, Ortiz and Hand").click();
 		cy.get("#projects > .dropdown").click();
-		cy.contains("Diverse impactful alliance").click();
+		cy.contains("Seamless homogeneous groupware").click();
 		cy.get("#activity > .dropdown").click();
-		cy.contains("grow customized systems").click();
+		cy.contains("benchmark clicks-and-mortar eyeballs").click();
 		cy.get('input[name="begin"]').type("07:00");
 		cy.get('input[name="end"]').type("08:00");
 		cy.get('input[name="rate"]').type("25", {force: true});
+		cy.get('input[name="description"]');
 		cy.get('button[name="create"]').click();
 		cy.get('p[name="save-message"]').should("contain", "Your time was saved");
 	});

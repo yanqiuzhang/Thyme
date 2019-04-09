@@ -23,6 +23,7 @@ class SaveTimeRecording extends Component {
 			activities: [],
 			projects: [],
 			customers: [],
+			description: "",
 			showProjectsDropdown: true,
 			showActivitiesDropdown: true
 		};
@@ -45,7 +46,8 @@ class SaveTimeRecording extends Component {
 			this.state.end,
 			this.state.customer,
 			this.state.project,
-			this.state.activity
+			this.state.activity,
+			this.state.description
 		);
 		if (response.status === 200) {
 			this.setState({
@@ -111,7 +113,7 @@ class SaveTimeRecording extends Component {
 				// 	Project
 					<Dropdown
 						options={projects}
-						placeholder="Project"
+						// placeholder="Project"
 						id="projects"
 						selection
 						onChange={(e, { value }) => this.handleProjectChange(value)}
@@ -125,7 +127,7 @@ class SaveTimeRecording extends Component {
 				// 	Activity
 					<Dropdown
 						options={activities}
-						placeholder="Activity"
+						// placeholder="Activity"
 						id="activity"
 						selection
 						onChange={(e, { value }) => this.handleActivityChange(value)}
@@ -172,7 +174,7 @@ class SaveTimeRecording extends Component {
 										marginLeft: "10px"
 									}}
 									options={customers}
-									placeholder="Customer"
+									// placeholder="Customer"
 									id="customer"
 									selection
 									onChange={(e, { value }) => this.handleCustomerChange(value)}

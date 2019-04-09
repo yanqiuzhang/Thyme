@@ -23,6 +23,11 @@ const TimeInputForm = props => {
 				onChange={props.changeValue}
 				name="rate"
 			/>
+			<label name="description" className="description">Description</label>
+			<Input
+				onChange={props.changeValue}
+				name="description"
+			/>
 		</div>
 	);
 };
