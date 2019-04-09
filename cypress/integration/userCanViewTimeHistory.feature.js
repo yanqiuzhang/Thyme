@@ -14,7 +14,7 @@ describe("User can view history of time recordings", () => {
 		});
 		cy.route({
 			method: "GET",
-			url: "https://demo-stable.kimai.org/api/projects",
+			url: "https://demo-stable.kimai.org/api/projects/{id}",
 			response: "fixtures:get_specific_project_name.json",
 			headers: {
 				"X-AUTH-USER": "susan_super",
@@ -30,8 +30,7 @@ describe("User can view history of time recordings", () => {
 		cy.contains("DURATION");
 		cy.contains("PROJECT");
 		cy.contains("ACTIVITY");
-		// cy.wait('@getSearch')
-  	// 	.its('url').should('include', '/projects?id')
+
 		cy.route('GET', 'projects/*', 'get_specific_project_name.json')
 	});
 });

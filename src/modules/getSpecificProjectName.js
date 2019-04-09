@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const getSpecificProjectName = async () => {
+const getSpecificProjectName = async (id) => {
 	const apiUrl = "https://demo.kimai.org/api/";
-	const path = apiUrl + "projects";
+	const path = apiUrl + 'projects/${id}';
 
 	let headers = {
 		"X-AUTH-USER": "susan_super",
