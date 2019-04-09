@@ -57,44 +57,59 @@ code {
 	margin-right: 5px;
 }
 
+.timeHistoryTitle {
+	color: #5cb695;
+	text-align: center;
+	font-weight: bold;
+
+}
+
 .itemTitle {
 	border: 1.5px solid #354151;
 	border-radius: 2px;
 	color: white;
 	float: left;
 	padding: 6px;
-	padding-left: 13px;
-  padding-right: 13px;
-	margin-right: 74px;
-	margin-left: 12px;
+	padding-left: 40px;
+  padding-right: 38px;
+	margin-right: 72px;
+	margin-left: 19px;
 	border-radius: 6px;
 	background-color: #5cb695;
 	margin-bottom: 20px;
 }
 
 .viewDiv {
-	width: 938px;
+	width: 1200px;
 }
 
 .dataDiv {
 	margin: 0 auto;
+	margin-left: -30px;
 	overflow: hidden;
 	border: 1px solid #354151;
 	border-radius: 8px;
 	background-color: #dcdcdc;
 	padding: 12px;
+	padding-left: 15px;
 }
 
 .itemData {
-	margin-right: 65px;
+	margin-right: 55px;
+	margin-left: 45px;
+}
+
+.itemDuration {
+	position: absolute;
+  left: 575px;
 }
 
 .itemProject {
 	position: absolute;
-  left: 600px;
+  left: 825px;
 }
 
 .itemActivity {
 	position: absolute;
-  left: 780px;
+  left: 1055px;
 }

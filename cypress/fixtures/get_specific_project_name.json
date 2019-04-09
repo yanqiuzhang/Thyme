@@ -1,0 +1,11 @@
+{
+  "id": 0,
+  "name": "string",
+  "comment": "string",
+  "visible": true,
+  "budget": 0,
+  "order_number": "string",
+  "fixed_rate": 0,
+  "hourly_rate": 0,
+  "customer": 0
+}

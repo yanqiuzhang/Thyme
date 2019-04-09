@@ -25,7 +25,6 @@ class SaveTimeRecording extends Component {
 				timeSaved: true,
 			});
 		} else {
-			debugger;
 			this.setState({
 				errorMessage: 'Your time was not saved, make sure that you use the correct format'
 			})

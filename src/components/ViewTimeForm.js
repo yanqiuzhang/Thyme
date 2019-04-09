@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import '../index.css';
-import moment from 'moment-timezone';
+import React, { Component } from "react";
+import "../index.css";
+import moment from "moment-timezone";
 
 class ViewTimeForm extends Component {
 	constructor(props) {
@@ -8,7 +8,8 @@ class ViewTimeForm extends Component {
 	}
 
 	render() {
-		const timesheets = this.props.timesheets
+		const timesheets = this.props.timesheets;
+		const projectName = this.props.projectName;
 		const items = [
 			{
 				name: "START TIME"
@@ -25,7 +26,7 @@ class ViewTimeForm extends Component {
 			{
 				name: "ACTIVITY"
 			}
-		]
+		];
 
 		return (
 			<div className="viewDiv">
@@ -39,20 +40,38 @@ class ViewTimeForm extends Component {
 					})}
 				</div>
 				<div>
+				<div className="timesheet">
 					{timesheets.map((item, index) => {
 						return (
 							<div key={index} className="dataDiv">
-								<label className="itemData">{ moment(item.begin).tz('Europe/Stockholm').format('YYYY-MM-DD HH:mm A') } </label>
-								<label className="itemData">{ moment(item.end).tz('Europe/Stockholm').format('YYYY-MM-DD HH:mm A') } </label>
+								<label className="itemData">
+									{moment(item.begin)
+										.tz("Europe/Stockholm")
+										.format("YYYY-MM-DD HH:mm A")}{" "}
+								</label>
+								<label className="itemData">
+									{moment(item.end)
+										.tz("Europe/Stockholm")
+										.format("YYYY-MM-DD HH:mm A")}{" "}
+								</label>
 								<label className="itemData">{item.duration}</label>
-								<label className="itemProject">{item.project}</label>
 								<label className="itemActivity">{item.activity}</label>
 							</div>
 						);
 					})}
 				</div>
+				<div>
+					{projectName.map((item, index) => {
+						return (
+							<div key={index} className="dataDiv">
+								<label className="itemProject">{item.name}</label>
+							</div>
+						);
+					})}
+					</div>
+				</div>
 			</div>
-		)
+		);
 	}
 }
 

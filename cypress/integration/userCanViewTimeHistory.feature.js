@@ -12,15 +12,27 @@ describe("User can view history of time recordings", () => {
 				"X-AUTH-TOKEN": "api_kitten"
 			}
 		});
+		cy.route({
+			method: "GET",
+			url: "https://demo-stable.kimai.org/api/projects",
+			response: "fixtures:get_specific_project_name.json",
+			headers: {
+				"X-AUTH-USER": "susan_super",
+				"X-AUTH-TOKEN": "api_kitten"
+			}
+		});
 		cy.visit("http://localhost:3000");
 		cy.get("input[type=name]").type("anna_admin");
 		cy.get("input[type=password]").type("api_kitten");
 		cy.get("button[type=submit]").click();
-		cy.contains("begin");
-		cy.contains("end");
-		cy.contains("duration");
-		cy.contains("project");
-		cy.contains("activity");
+		cy.contains("START TIME");
+		cy.contains("END TIME");
+		cy.contains("DURATION");
+		cy.contains("PROJECT");
+		cy.contains("ACTIVITY");
+		// cy.wait('@getSearch')
+  	// 	.its('url').should('include', '/projects?id')
+		cy.route('GET', 'projects/*', 'get_specific_project_name.json')
 	});
 });
 
@@ -43,10 +55,10 @@ describe("User cannot view history of time recordings", () => {
 		cy.get("input[type=password]").type("api_kitten");
 		cy.get("button[type=submit]").click();
 		cy.get('#error_message').should('contain', 'Currently your time record history is not available')
-		cy.get("begin").should("not.exist");
-		cy.get("end").should("not.exist");
-		cy.get("duration").should("not.exist");
-		cy.get("project").should("not.exist");
-		cy.get("activity").should("not.exist");
+		// cy.get("begin").should("not.exist");
+		// cy.get("end").should("not.exist");
+		// cy.get("duration").should("not.exist");
+		// cy.get("project").should("not.exist");
+		// cy.get("activity").should("not.exist");
 	});
 });
