@@ -109,30 +109,24 @@ class SaveTimeRecording extends Component {
 
 		if (this.state.showProjectsDropdown === true) {
 			projectsDropdown = (
-				// <label name="End Time" className="time">
-				// 	Project
-					<Dropdown
-						options={projects}
-						// placeholder="Project"
-						id="projects"
-						selection
-						onChange={(e, { value }) => this.handleProjectChange(value)}
-					/>
-				// </label>
+				<Dropdown
+					options={projects}
+					placeholder="Project"
+					id="projects"
+					selection
+					onChange={(e, { value }) => this.handleProjectChange(value)}
+				/>
 			);
 		}
 		if (this.state.showActivitiesDropdown === true) {
 			activitiesDropdown = (
-				// <label name="End Time" className="time">
-				// 	Activity
-					<Dropdown
-						options={activities}
-						// placeholder="Activity"
-						id="activity"
-						selection
-						onChange={(e, { value }) => this.handleActivityChange(value)}
-					/>
-				// </label>
+				<Dropdown
+					options={activities}
+					placeholder="Activity"
+					id="activity"
+					selection
+					onChange={(e, { value }) => this.handleActivityChange(value)}
+				/>
 			);
 		}
 
@@ -167,19 +161,16 @@ class SaveTimeRecording extends Component {
 				>
 					<Grid.Column>
 						<Segment>
-							{/* <label name="End Time" className="time">
-								Customer */}
-								<Dropdown
-									style={{
-										marginLeft: "10px"
-									}}
-									options={customers}
-									// placeholder="Customer"
-									id="customer"
-									selection
-									onChange={(e, { value }) => this.handleCustomerChange(value)}
-								/>
-							{/* </label> */}
+							<Dropdown
+								style={{
+									marginLeft: "10px"
+								}}
+								options={customers}
+								placeholder="Customer"
+								id="customer"
+								selection
+								onChange={(e, { value }) => this.handleCustomerChange(value)}
+							/>
 						</Segment>
 					</Grid.Column>
 					<Grid.Column>
