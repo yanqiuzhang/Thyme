@@ -143,44 +143,41 @@ class SaveTimeRecording extends Component {
 			saveButton = <p name="save-message">Your time was saved</p>;
 		}
 		return (
-			<div id="time-block">
-				<Grid textAlign="center" columns={4}>
-					<Grid>
-						<Form.Group
-							width="full"
-							style={{
-								background: "#DDDD",
-								paddingTop: "10%",
-								paddingBottom: "10%",
-								width: "1740px",
-								position: "absolute",
-								marginTop: "70%"
-							}}
-						>
-							<Dropdown
-								style={{
-									marginLeft: "10px"
-								}}
-								options={customers}
-								id="customer"
-								selection
-								onChange={(e, { value }) => this.handleCustomerChange(value)}
-							/>
-							{projectsDropdown}
-							{activitiesDropdown}
-							<TimeInputForm
-								style={{
-									aligncontent: "left"
-								}}
-								changeValue={this.onChange.bind(this)}
-								begin={this.state.begin}
-								end={this.state.end}
-							/>
-							{saveButton}
-						</Form.Group>
-					</Grid>
-				</Grid>
-			</div>
+			<>
+				<Form.Group
+					width="full"
+					style={{
+						background: "#DDDD",
+						paddingTop: "10%",
+						paddingBottom: "10%",
+						width: "1600px",
+						position: "absolute",
+						marginTop: "80%",
+						textAlign: "center"
+					}}
+				>
+					<Dropdown
+						style={{
+							marginLeft: "10px"
+						}}
+						options={customers}
+						id="customer"
+						selection
+						onChange={(e, { value }) => this.handleCustomerChange(value)}
+					/>
+					{projectsDropdown}
+					{activitiesDropdown}
+					<TimeInputForm
+						style={{
+							aligncontent: "left"
+						}}
+						changeValue={this.onChange.bind(this)}
+						begin={this.state.begin}
+						end={this.state.end}
+					/>
+					{saveButton}
+				</Form.Group>
+			</>
 		);
 	}
 }

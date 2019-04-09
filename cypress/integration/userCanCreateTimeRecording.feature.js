@@ -44,11 +44,9 @@ describe("User can create time recording", () => {
 		cy.get("input[type=password]").type("api_kitten");
 		cy.get("button[type=submit]").click();
 		cy.get("#customer > .dropdown").click();
-		cy.contains("Berge-Klocko").click();
+		cy.contains("Bradtke-Kautzer").click();
 		cy.get("#projects > .dropdown").click();
-		cy.contains("Object-based non-volatile architecture").click();
-		cy.get("#activity > .dropdown").click();
-		cy.contains("deliver 24/7 infrastructures").click();
+		cy.contains("Balanced human-resource functionalities").click();
 		cy.get('input[name="begin"]').type("07:00");
 		cy.get('input[name="end"]').type("08:00");
 		cy.get('input[name="rate"]').type("25");
@@ -73,7 +71,6 @@ describe("User can create time recording", () => {
 		cy.get("input[type=password]").type("api_kitten");
 		cy.get("button[type=submit]").click();
 		cy.get("#customer > .dropdown").click();
-		cy.contains("Bashirian, Schaden and Ratke").click();
 		cy.get('input[name="begin"]').type("abcd");
 		cy.get('input[name="end"]').type("abcd");
 		cy.get('button[name="create"]').click();

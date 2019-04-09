@@ -17,7 +17,7 @@ const TimeInputForm = props => {
 				onChange={props.changeValue}
 				name="end"
 			/>
-			<label name="rate-input" className="rate">$ Rate</label>
+			<label name="rate-input" className="rate">Rate</label>
 			<Input
 				placeholder="$"
 				onChange={props.changeValue}
