@@ -1,5 +1,5 @@
 import axios from "axios";
-import moment from "moment";
+import moment from "moment-timezone";
 
 const saveTime = async (begin, end, customer, project, activity, rate, description) => {
 	const apiUrl = "https://demo.kimai.org/api/";
@@ -14,7 +14,7 @@ const saveTime = async (begin, end, customer, project, activity, rate, descripti
 	debugger
 	try {
 		const response = await axios.post(
-		  apiUrl + "timesheets",
+			apiUrl + "timesheets",
 			{
 				begin: moment(begin, "HH:mm")
 					.format("YYYY-MM-DD HH:mm"),
