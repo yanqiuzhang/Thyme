@@ -57,6 +57,7 @@ describe("User can create time recording", () => {
 		cy.get('input[name="end"]').type("08:00");
 		cy.get('input[name="rate"]').type("25", {force: true});
 		cy.get('input[name="description"]');
+		cy.get('input[name="description"]').type("I worked really hard on this");
 		cy.get('button[name="create"]').click();
 		cy.get('p[name="save-message"]').should("contain", "Your time was saved");
 	});
