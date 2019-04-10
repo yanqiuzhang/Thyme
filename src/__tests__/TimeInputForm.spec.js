@@ -11,7 +11,7 @@ describe("<TimeInputForm />", () => {
 		expect(describedComponent.find("Input"))
 	})
 
-	it("has 3 input fields", () => {
+	it("has 4 input fields", () => {
 		const describedComponent = shallow(<TimeInputForm />);
 		expect(describedComponent.find("Input")).toHaveLength(4);
 	})

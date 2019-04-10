@@ -25,8 +25,6 @@ class SaveTimeRecording extends Component {
 			projects: [],
 			customers: [],
 			description: "",
-			showProjectsDropdown: true,
-			showActivitiesDropdown: true
 		};
 	}
 
