@@ -5,8 +5,8 @@
 			cy.server();
 			cy.route({
 					method: "GET",
-					url: "https://demo-stable.kimai.org/api/timesheets",
-					response: "fixture:get_data.json",
+					url: "https://demo.kimai.org/api/timesheets",
+					response: "fixture:get_timesheet.json",
 					headers: {
 							"X-AUTH-USER": "susan_super",
 							"X-AUTH-TOKEN": "api_kitten"
@@ -14,7 +14,7 @@
 			});
 			cy.route({
 					method: "GET",
-					url: "https://demo-stable.kimai.org/api/projects?visible=3",
+					url: "https://demo.kimai.org/api/projects?visible=3",
 					response: "fixture:get_projects.json",
 					headers: {
 							"X-AUTH-USER": "susan_super",
@@ -24,7 +24,7 @@
 
 			cy.route({
 				method: "GET",
-				url: "https://demo-stable.kimai.org/api/activities?visible=3",
+				url: "https://demo.kimai.org/api/activities?visible=3",
 				response: "fixture:get_activities.json",
 				headers: {
 						"X-AUTH-USER": "susan_super",
@@ -42,6 +42,7 @@
 			cy.contains("DURATION");
 			cy.contains("PROJECT");
 			cy.contains("ACTIVITY");
-			cy.route('GET', 'projects/*', 'get_specific_project_name.json')
+			cy.contains("architect intuitive niches (x)");
+			cy.contains("Phadder")
 	});
 });

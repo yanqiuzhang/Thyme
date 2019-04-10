@@ -1,7 +1,7 @@
 [
 	{
 		"id": 1,
-		"name": "string",
+		"name": "Phadder",
 		"comment": "string",
 		"visible": true,
 		"budget": 0,
@@ -13,7 +13,7 @@
 
 	{
 		"id": 2,
-		"name": "string",
+		"name": "CraftEd",
 		"comment": "string",
 		"visible": true,
 		"budget": 0,
@@ -25,7 +25,7 @@
 
 	{
 		"id": 3,
-		"name": "string",
+		"name": "Thyme",
 		"comment": "string",
 		"visible": true,
 		"budget": 0,
