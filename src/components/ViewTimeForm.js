@@ -55,7 +55,7 @@ class ViewTimeForm extends Component {
 								</label>
 								<label className="itemProject">{item.project}</label>
 								<label className="itemActivity">{item.activity}</label>
-								<label className="itemDuration">{item.duration}</label>
+								<label className="itemDuration">{moment.utc(item.duration*1000).format('HH:mm:ss')}</label>
 							</div>
 						);
 					})}

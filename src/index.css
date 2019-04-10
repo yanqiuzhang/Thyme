@@ -83,7 +83,6 @@ code {
 
 .viewDiv {
 	width: 1400px;
-
 }
 
 .dataDiv {
@@ -93,8 +92,8 @@ code {
 	border: 1px solid #354151;
 	border-radius: 8px;
 	background-color: #dcdcdc;
-	padding: 12px;
-	padding-left: 15px;
+	padding-top: 14px;
+	/* padding-left: 15px; */
 	height: 65px;
 }
 
@@ -108,8 +107,6 @@ code {
 	position: absolute;
 	left: 545px;
 	width: 285px;
-	justify-content: space-evenly;
-
 }
 
 .itemActivity {
