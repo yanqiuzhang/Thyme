@@ -17,18 +17,18 @@ class ViewTimeForm extends Component {
 				name: "END TIME"
 			},
 			{
-				name: "DURATION"
-			},
-			{
 				name: "PROJECT"
 			},
 			{
 				name: "ACTIVITY"
+			},
+			{
+				name: "DURATION"
 			}
 		];
 
 		return (
-			<div className="viewDiv">
+			<div className="viewDiv" >
 				<div>
 					{items.map((item, index) => {
 						return (
@@ -53,9 +53,9 @@ class ViewTimeForm extends Component {
 										.tz("Europe/Stockholm")
 										.format("YYYY-MM-DD HH:mm A")}{" "}
 								</label>
-								<label className="itemData">{item.duration}</label>
-								<label className="itemData">{item.project}</label>
+								<label className="itemProject">{item.project}</label>
 								<label className="itemActivity">{item.activity}</label>
+								<label className="itemDuration">{item.duration}</label>
 							</div>
 						);
 					})}

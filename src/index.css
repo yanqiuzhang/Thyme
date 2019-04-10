@@ -70,17 +70,19 @@ code {
 	color: white;
 	float: left;
 	padding: 6px;
-	padding-left: 40px;
-  padding-right: 38px;
-	margin-right: 72px;
+	padding-left: 55px;
+	padding-right: 55px;
+	margin-right: 80px;
 	margin-left: 19px;
 	border-radius: 6px;
 	background-color: #5cb695;
 	margin-bottom: 20px;
 }
 
+
+
 .viewDiv {
-	width: 1200px;
+	width: 1400px;
 }
 
 .dataDiv {
@@ -95,22 +97,23 @@ code {
 }
 
 .itemData {
-	margin-right: 55px;
-	margin-left: 45px;
+	margin-right: 75px;
+	margin-left: 55px;
 	text-align: center;
-}
-
-.itemDuration {
-	position: absolute;
-  left: 675px;
 }
 
 .itemProject {
 	position: absolute;
-  left: 825px;
+  left: 565px;
 }
 
 .itemActivity {
 	position: absolute;
-  left: 1055px;
+	left: 845px;
+}
+
+.itemDuration {
+	position: absolute;
+	left: 1175x;
+	padding-left: 680px;
 }
