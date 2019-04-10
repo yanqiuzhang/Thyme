@@ -52,7 +52,70 @@ code {
   width: 520px;
 }
 
-.time{
+.time {
 	margin-left: 10px;
 	margin-right: 5px;
+}
+
+.timeHistoryTitle {
+	color: #5cb695;
+	text-align: center;
+	font-weight: bold;
+
+}
+
+.itemTitle {
+	border: 1.5px solid #354151;
+	border-radius: 2px;
+	color: white;
+	float: left;
+	padding: 6px;
+	padding-left: 55px;
+	padding-right: 55px;
+	margin-right: 80px;
+	margin-left: 19px;
+	border-radius: 6px;
+	background-color: #5cb695;
+	margin-bottom: 20px;
+}
+
+
+
+.viewDiv {
+	width: 1400px;
+}
+
+.dataDiv {
+	margin: 0 auto;
+	margin-left: -30px;
+	overflow: hidden;
+	border: 1px solid #354151;
+	border-radius: 8px;
+	background-color: #dcdcdc;
+	padding-top: 14px;
+	/* padding-left: 15px; */
+	height: 65px;
+}
+
+.itemData {
+	margin-right: 75px;
+	margin-left: 55px;
+	text-align: center;
+}
+
+.itemProject {
+	position: absolute;
+	left: 545px;
+	width: 285px;
+}
+
+.itemActivity {
+	position: absolute;
+	left: 845px;
+}
+
+.itemDuration {
+	position: absolute;
+	left: 1175x;
+	padding-left: 680px;
 }
