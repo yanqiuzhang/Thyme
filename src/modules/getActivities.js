@@ -2,7 +2,7 @@ import axios from "axios";
 
 const getActivities= async () => {
 	const apiUrl = "https://demo.kimai.org/api/";
-	const path = apiUrl + 'activities';
+	const path = apiUrl + 'activities?visible=3';
 
   const user = JSON.parse(sessionStorage.current_user).username
 	const password = JSON.parse(sessionStorage.current_user).password
@@ -17,6 +17,7 @@ const getActivities= async () => {
 			headers: headers,
 			mode: "cors"
 		});
+		debugger;
 		return resp;
 	} catch (error) {
 		return error;

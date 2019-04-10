@@ -83,6 +83,7 @@ code {
 
 .viewDiv {
 	width: 1400px;
+
 }
 
 .dataDiv {
@@ -94,6 +95,7 @@ code {
 	background-color: #dcdcdc;
 	padding: 12px;
 	padding-left: 15px;
+	height: 65px;
 }
 
 .itemData {
@@ -104,7 +106,10 @@ code {
 
 .itemProject {
 	position: absolute;
-  left: 565px;
+	left: 545px;
+	width: 285px;
+	justify-content: space-evenly;
+
 }
 
 .itemActivity {

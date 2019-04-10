@@ -22,7 +22,7 @@ class Menubar extends Component {
 		return (
 			<Grid columns={2} style={{ background: "#354152" }}>
 				<Grid.Column
-					style={{ background: "#5bb695", width: "60px", height: "995px" }}
+					style={{ background: "#5bb695", width: "60px" }}
 				>
 					<Button
 						id='menuicon'
@@ -125,7 +125,7 @@ class Menubar extends Component {
 						<SaveTimeRecording />
 					</Segment>
 				</div>
-				<div style={{ paddingTop: '70px' }}>
+				<div style={{ paddingTop: '70px', margin: 'auto' }}>
 					<Segment basic>
 						<ViewTimeRecording />
 					</Segment>
