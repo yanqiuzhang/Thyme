@@ -20,8 +20,7 @@ class ViewTimeRecording extends Component {
 		this.getTimesheets();
 	}
 
-	async magic(unFilteredTimesheets, unFilteredProjects, unFilteredActivities) {
-		debugger;
+	async matchApi(unFilteredTimesheets, unFilteredProjects, unFilteredActivities) {
 
 		const projectsFiltered = unFilteredTimesheets.map(time => {
 			unFilteredProjects.filter(projects => {
@@ -47,7 +46,7 @@ class ViewTimeRecording extends Component {
 		const activities = await getActivities();
 		const timesheets = await getTimesheets();
 		if (timesheets.status === 200 && projects.status ===  200 && activities.status ===  200) {
-			const processedTimesheets = await this.magic(timesheets.data, projects.data, activities.data)
+			const processedTimesheets = await this.matchApi(timesheets.data, projects.data, activities.data)
 			this.setState({
 				timesheets: processedTimesheets
 			});

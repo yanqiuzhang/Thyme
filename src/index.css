@@ -97,11 +97,12 @@ code {
 .itemData {
 	margin-right: 55px;
 	margin-left: 45px;
+	text-align: center;
 }
 
 .itemDuration {
 	position: absolute;
-  left: 575px;
+  left: 675px;
 }
 
 .itemProject {
