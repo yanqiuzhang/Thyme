@@ -9,7 +9,6 @@ class ViewTimeForm extends Component {
 
 	render() {
 		const timesheets = this.props.timesheets;
-		const projectName = this.props.projectName;
 		const items = [
 			{
 				name: "START TIME"

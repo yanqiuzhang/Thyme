@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const getActivities= async (id) => {
+const getActivities= async () => {
 	const apiUrl = "https://demo.kimai.org/api/";
-	const path = apiUrl + 'projects/${id}';
+	const path = apiUrl + 'activities';
 
   const user = JSON.parse(sessionStorage.current_user).username
 	const password = JSON.parse(sessionStorage.current_user).password
@@ -11,6 +11,7 @@ const getActivities= async (id) => {
 		"X-AUTH-USER": user,
 		"X-AUTH-TOKEN": password,
 	};
+
 	try {
 		const resp = await axios.get(path, {
 			headers: headers,
