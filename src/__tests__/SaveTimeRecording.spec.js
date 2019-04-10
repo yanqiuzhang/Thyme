@@ -4,7 +4,6 @@ import SaveTimeRecording from "../components/SaveTimeRecording";
 import * as saveTimeSheet from "../modules/saveTimeSheet";
 
 describe("<SaveTimeRecording />", () => {
-
 	it("calls postTimesheets when button is clicked", () => {
 		const postTimesheetsSpy = jest.spyOn(
 			SaveTimeRecording.prototype,
@@ -15,40 +14,39 @@ describe("<SaveTimeRecording />", () => {
 		expect(postTimesheetsSpy).toHaveBeenCalled();
 	});
 
-
-	it('Dropdown onChange calls on handleCustomerChange', () => {
+	it("Dropdown onChange calls on handleCustomerChange", () => {
 		const handleCustomerChangeSpy = jest.spyOn(
 			SaveTimeRecording.prototype,
 			"handleCustomerChange"
 		);
 		const describedComponent = mount(<SaveTimeRecording />);
-		describedComponent.find("Dropdown[id='customer']").simulate('change', {
+		describedComponent.find("Dropdown[id='customer']").simulate("change", {
 			option: { value: "1" }
-		})
-		expect(handleCustomerChangeSpy).toHaveBeenCalled()
-	})
+		});
+		expect(handleCustomerChangeSpy).toHaveBeenCalled();
+	});
 
-	it('Dropdown onChange calls on handleProjectChange', () => {
+	it("Dropdown onChange calls on handleProjectChange", () => {
 		const handleProjectChangeSpy = jest.spyOn(
 			SaveTimeRecording.prototype,
 			"handleProjectChange"
 		);
 		const describedComponent = mount(<SaveTimeRecording />);
-		describedComponent.find("Dropdown[id='projects']").simulate('change', {
+		describedComponent.find("Dropdown[id='projects']").simulate("change", {
 			option: { value: "1" }
-		})
-		expect(handleProjectChangeSpy).toHaveBeenCalled()
-	})
+		});
+		expect(handleProjectChangeSpy).toHaveBeenCalled();
+	});
 
-	it('Dropdown onChange calls on handleActivityChange', () => {
+	it("Dropdown onChange calls on handleActivityChange", () => {
 		const handleActivityChangeSpy = jest.spyOn(
 			SaveTimeRecording.prototype,
 			"handleActivityChange"
 		);
 		const describedComponent = mount(<SaveTimeRecording />);
-		describedComponent.find("Dropdown[id='activity']").simulate('change', {
+		describedComponent.find("Dropdown[id='activity']").simulate("change", {
 			option: { value: "1" }
-		})
-		expect(handleActivityChangeSpy).toHaveBeenCalled()
-	})
+		});
+		expect(handleActivityChangeSpy).toHaveBeenCalled();
+	});
 });
