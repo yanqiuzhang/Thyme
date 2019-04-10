@@ -47,6 +47,7 @@ class SaveTimeRecording extends Component {
 			this.state.customer,
 			this.state.project,
 			this.state.activity,
+			this.state.rate,
 			this.state.description
 		);
 		if (response.status === 200) {
