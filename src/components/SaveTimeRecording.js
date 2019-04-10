@@ -90,7 +90,7 @@ class SaveTimeRecording extends Component {
 		this.setState({ activity: option });
 	}
 
-	magic() {
+	filterProjects() {
 		if (this.state.customer != "") {
 			const filtered = this.state.projects.filter(val => {
 				return val.customer === this.state.customer;
@@ -99,7 +99,24 @@ class SaveTimeRecording extends Component {
 				return { text: val.name, value: val.id };
 			});
 		} else {
-			return this.state.projects;
+			return this.state.projects.map(val => {
+				return { text: val.name, value: val.id };
+			});
+		}
+	}
+
+	filterActivities() {
+		if (this.state.project != "") {
+			const filtered = this.state.activities.filter(val => {
+				return val.project === this.state.project;
+			})
+			return filtered.map(val => {
+				return { text: val.name, value: val.id };
+			})
+		} else {
+			return this.state.activities.map(val => {
+				return { text: val.name, value: val.id };
+			});
 		}
 	}
 
@@ -107,12 +124,6 @@ class SaveTimeRecording extends Component {
 		let saveButton;
 
 		const customers = this.state.customers.map(val => {
-			return { text: val.name, value: val.id };
-		});
-		const projects = this.state.projects.map(val => {
-			return { text: val.name, value: val.id };
-		});
-		const activities = this.state.activities.map(val => {
 			return { text: val.name, value: val.id };
 		});
 
@@ -163,7 +174,7 @@ class SaveTimeRecording extends Component {
 					<Grid.Column>
 						<Segment>
 							<Dropdown
-								options={this.magic()}
+								options={this.filterProjects()}
 								placeholder="Project"
 								id="projects"
 								selection
@@ -174,7 +185,7 @@ class SaveTimeRecording extends Component {
 					<Grid.Column>
 						<Segment>
 							<Dropdown
-								options={activities}
+								options={this.filterActivities()}
 								placeholder="Activity"
 								id="activity"
 								selection

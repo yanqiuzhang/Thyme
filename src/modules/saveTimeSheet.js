@@ -11,7 +11,6 @@ const saveTime = async (begin, end, customer, project, activity, rate, descripti
 		"X-AUTH-USER": username,
 		"X-AUTH-TOKEN": password
 	};
-	debugger
 	try {
 		const response = await axios.post(
 			apiUrl + "timesheets",
