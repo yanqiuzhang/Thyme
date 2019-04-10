@@ -23,7 +23,7 @@ const fetchCustomers = async () => {
 const fetchProjects = async () => {
 	const username = JSON.parse(sessionStorage.current_user).username;
 	const password = JSON.parse(sessionStorage.current_user).password;
-	const path = apiUrl + "projects";
+	const path = apiUrl + "projects?visible=3";
 	let headers = {
 		"X-AUTH-USER": username,
 		"X-AUTH-TOKEN": password
@@ -35,7 +35,7 @@ const fetchProjects = async () => {
 			mode: "cors"
 		});
 
-		return response.data;
+		return response;
 	} catch (error) {
 		console.log(error);
 	}
@@ -44,7 +44,7 @@ const fetchProjects = async () => {
 const fetchActivities = async () => {
 	const username = JSON.parse(sessionStorage.current_user).username;
 	const password = JSON.parse(sessionStorage.current_user).password;
-	const path = apiUrl + "activities";
+	const path = apiUrl + "activities?visible=3";
 	let headers = {
 		"X-AUTH-USER": username,
 		"X-AUTH-TOKEN": password
@@ -56,7 +56,7 @@ const fetchActivities = async () => {
 			mode: "cors"
 		});
 
-		return response.data;
+		return response;
 	} catch (error) {
 		console.log(error);
 	}

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { saveTime } from "../modules/saveTimeSheet";
 import TimeInputForm from "./TimeInputForm";
 import '../index.css';
-import { Segment, Button, Grid, Dropdown } from "semantic-ui-react";
+import { Button, Grid, Dropdown } from "semantic-ui-react";
 import {
 	fetchCustomers,
 	fetchProjects,
@@ -35,8 +35,8 @@ class SaveTimeRecording extends Component {
 		const projects = await fetchProjects();
 		const activities = await fetchActivities();
 		this.setState({
-			activities: activities,
-			projects: projects,
+			activities: activities.data,
+			projects: projects.data,
 			customers: customers
 		});
 	}
@@ -53,7 +53,7 @@ class SaveTimeRecording extends Component {
 		);
 		if (response.status === 200) {
 			this.setState({
-				timeSaved: true
+				timeSaved: true,
 			});
 		} else {
 			this.setState({

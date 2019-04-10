@@ -27,7 +27,7 @@ describe("User can create time recording", () => {
 		cy.route({
 			method: "GET",
 			url: "https://demo.kimai.org/api/activities",
-			response: "fixture:activities_index.json",
+			response: "fixture:get_activities.json",
 			headers: {
 				"X-AUTH-USER": "susan_super",
 				"X-AUTH-TOKEN": "api_kitten"
@@ -36,7 +36,7 @@ describe("User can create time recording", () => {
 		cy.route({
 			method: "GET",
 			url: "https://demo.kimai.org/api/projects",
-			response: "fixture:projects_index.json",
+			response: "fixture:get_projects.json",
 			headers: {
 				"X-AUTH-USER": "susan_super",
 				"X-AUTH-TOKEN": "api_kitten"
