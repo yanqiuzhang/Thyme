@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { saveTime } from "../modules/saveTimeSheet";
 import TimeInputForm from "./TimeInputForm";
+import '../index.css';
 import { Segment, Button, Grid, Dropdown } from "semantic-ui-react";
 import {
 	fetchCustomers,
@@ -146,22 +147,25 @@ class SaveTimeRecording extends Component {
 
 		return (
 			<>
-				<Grid
-					columns="equal"
-					textAlign="center"
-					style={{
-						background: "#DDDD",
-						paddingTop: "2%",
-						paddingBottom: "2%",
-						textAlign: "center",
-						width: "1300px"
-					}}
-				>
-					<Grid.Column>
-						<Segment>
+				<Grid columns="equal" textAlign="center" className="gridBackground">
+					<div>
+						<TimeInputForm
+							style={{
+								aligncontent: "left",
+								float: 'left'
+							}}
+							changeValue={this.onChange.bind(this)}
+							begin={this.state.begin}
+							end={this.state.end}
+						/>
+					</div>
+
+					<div style={{ margin: '10px'}}>
+						<Grid.Column>
 							<Dropdown
 								style={{
-									marginLeft: "10px"
+									marginLeft: "20px",
+									width: '300px'
 								}}
 								options={customers}
 								placeholder="Customer"
@@ -169,45 +173,33 @@ class SaveTimeRecording extends Component {
 								selection
 								onChange={(e, { value }) => this.handleCustomerChange(value)}
 							/>
-						</Segment>
-					</Grid.Column>
-					<Grid.Column>
-						<Segment>
+
 							<Dropdown
+							style={{
+								marginLeft: "20px",
+								width: '300px'
+							}}
 								options={this.filterProjects()}
 								placeholder="Project"
 								id="projects"
 								selection
 								onChange={(e, { value }) => this.handleProjectChange(value)}
 							/>
-						</Segment>
-					</Grid.Column>
-					<Grid.Column>
-						<Segment>
+
 							<Dropdown
+							style={{
+								marginLeft: "20px",
+								width: '300px'
+							}}
 								options={this.filterActivities()}
 								placeholder="Activity"
 								id="activity"
 								selection
 								onChange={(e, { value }) => this.handleActivityChange(value)}
 							/>
-						</Segment>
-					</Grid.Column>
-					<Grid.Column>
-						<Segment>
-							<TimeInputForm
-								style={{
-									aligncontent: "left"
-								}}
-								changeValue={this.onChange.bind(this)}
-								begin={this.state.begin}
-								end={this.state.end}
-							/>
-						</Segment>
-					</Grid.Column>
-					<Grid.Column>
-						<Segment>{saveButton}</Segment>
-					</Grid.Column>
+							{saveButton}
+						</Grid.Column>
+					</div>
 				</Grid>
 			</>
 		);

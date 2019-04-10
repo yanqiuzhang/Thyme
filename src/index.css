@@ -52,7 +52,19 @@ code {
   width: 520px;
 }
 
-.time{
+.time {
 	margin-left: 10px;
 	margin-right: 5px;
+}
+
+.dropdownList {
+  float: left
+}
+
+.gridBackground {
+	background: #DDDD;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	text-align: center;
+	width: 1300px;
 }
