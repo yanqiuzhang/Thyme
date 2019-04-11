@@ -58,9 +58,6 @@ class Menubar extends Component {
 						/>
 					</div>
 
-					{/* <p id="login_message" style={{ color: '#354151', textAlign: 'center' }}>
-						Welcome, {this.props.user.toUpperCase()}
-					</p> */}
 					<Menu.Item
 						className="item"
 						as="a"

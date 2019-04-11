@@ -49,14 +49,3 @@ class HomePage extends Component {
 	}
 }
 export default HomePage;
-
-// <div style={{ overflow: 'hidden' }}>
-{
-	/* <div>
-<Menubar style={{ zIndex: "10" }} user={user} />
-</div>
-<div>
-
-</div>
-</div> */
-}
