@@ -21,10 +21,9 @@ class Menubar extends Component {
 		const { visible } = this.state;
 
 		return (
-			<Grid columns={2} style={{ background: "#354152" }}>
+			<Grid columns={2} style={{ background: "#354152"}}>
 				<Grid.Column
-					style={{ background: "#5bb695", width: "60px"}}
-					className="ui left fixed menu"
+					style={{ background: "#5bb695", width: "60px", height: "inherit"}}
 				>
 					<Button
 						id='menuicon'
@@ -125,13 +124,12 @@ class Menubar extends Component {
 				<div >
 					<Segment basic>
 						<SaveTimeRecording />
+						<div style={{ paddingTop: '70px', margin: 'auto' }}>
+								<ViewTimeRecording />
+						</div>
 					</Segment>
 				</div>
-				<div style={{ paddingTop: '70px', margin: 'auto' }}>
-					<Segment basic>
-						<ViewTimeRecording />
-					</Segment>
-				</div>
+
 				<div>
 					<Footer />
 				</div>

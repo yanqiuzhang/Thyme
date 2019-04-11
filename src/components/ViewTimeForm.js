@@ -9,34 +9,15 @@ class ViewTimeForm extends Component {
 
 	render() {
 		const timesheets = this.props.timesheets;
-		const items = [
-			{
-				name: "START TIME"
-			},
-			{
-				name: "END TIME"
-			},
-			{
-				name: "PROJECT"
-			},
-			{
-				name: "ACTIVITY"
-			},
-			{
-				name: "DURATION"
-			}
-		];
 
 		return (
 			<div className="viewDiv" >
-				<div>
-					{items.map((item, index) => {
-						return (
-							<div key={index} >
-								<label className="itemTitle">{item.name}</label>
-							</div>
-						);
-					})}
+				<div style={{width: '1200px'}}>
+					<label className="itemTitle">START TIME</label>
+					<label className="itemTitle" style={{marginLeft: '40px'}}>END TIME</label>
+					<label className="itemTitle" style={{marginLeft: '71px'}}>PROJECT</label>
+					<label className="itemTitle" style={{marginLeft: '103px'}}>ACTIVITY</label>
+					<label className="itemTitle" style={{marginLeft: '70px', marginRight: '11px'}}>DURATION</label>
 				</div>
 				<div>
 				<div className="timesheet">

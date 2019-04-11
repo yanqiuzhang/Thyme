@@ -72,15 +72,13 @@ code {
 	padding: 6px;
 	padding-left: 55px;
 	padding-right: 55px;
-	margin-right: 80px;
-	margin-left: 19px;
 	border-radius: 6px;
 	background-color: #5cb695;
-	margin-bottom: 20px;
+	margin-bottom: 50px;
 }
 
 .viewDiv {
-	width: 1400px;
+	width: 1200px;
 }
 
 .dataDiv {
@@ -94,20 +92,20 @@ code {
 }
 
 .itemData {
-	margin-right: 75px;
-	margin-left: 55px;
+	margin-right: 30px;
+	margin-left: 30px;
 	text-align: center;
 }
 
 .itemProject {
 	position: absolute;
-	left: 545px;
+	left: 472px;
 	width: 285px;
 }
 
 .itemActivity {
 	position: absolute;
-	left: 845px;
+	left: 800px;
 }
 
 .itemDuration {
