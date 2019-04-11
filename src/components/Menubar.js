@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { Button, Grid, Menu, Sidebar, Segment } from "semantic-ui-react";
 import { IoIosMenu } from "react-icons/io";
 import logo from "../image/image.png";
-import SaveTimeRecording from "./SaveTimeRecording";
-import ViewTimeRecording from './ViewTimeRecording';
-import Footer from './footer';
 
 class Menubar extends Component {
 	constructor(props) {
@@ -61,9 +58,6 @@ class Menubar extends Component {
 						/>
 					</div>
 
-					<p id="login_message" style={{ color: '#354151', textAlign: 'center' }}>
-						Welcome, {this.props.user.toUpperCase()}
-					</p>
 					<Menu.Item
 						className="item"
 						as="a"
@@ -121,18 +115,6 @@ class Menubar extends Component {
 						Tab5
 					</Menu.Item>
 				</Sidebar>
-				<div >
-					<Segment basic>
-						<SaveTimeRecording />
-						<div style={{ paddingTop: '70px', margin: 'auto' }}>
-								<ViewTimeRecording />
-						</div>
-					</Segment>
-				</div>
-
-				<div>
-					<Footer />
-				</div>
 			</Grid>
 		);
 	}
