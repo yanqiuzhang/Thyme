@@ -85,7 +85,6 @@ code {
 
 .dataDiv {
 	margin: 0 auto;
-	margin-left: -30px;
 	overflow: hidden;
 	border: 1px solid #354151;
 	border-radius: 8px;
@@ -115,4 +114,14 @@ code {
 	position: absolute;
 	left: 1175x;
 	padding-left: 680px;
+}
+
+.gridBackground {
+	background: #DDDD;
+	padding-top: 4px;
+	padding-bottom: 5px;
+	text-align: center;
+	width: 1223px;
+	margin-left: 10px;
+	margin-top: 10px;
 }

@@ -22,7 +22,8 @@ class Menubar extends Component {
 		return (
 			<Grid columns={2} style={{ background: "#354152" }}>
 				<Grid.Column
-					style={{ background: "#5bb695", width: "60px" }}
+					style={{ background: "#5bb695", width: "60px"}}
+					className="ui left fixed menu"
 				>
 					<Button
 						id='menuicon'

@@ -145,8 +145,7 @@ class SaveTimeRecording extends Component {
 
 		return (
 			<>
-				<Grid columns="equal" textAlign="center" className="gridBackground">
-					<div>
+				<div columns="equal" textAlign="center" className="gridBackground">
 						<TimeInputForm
 							style={{
 								aligncontent: "left",
@@ -156,10 +155,9 @@ class SaveTimeRecording extends Component {
 							begin={this.state.begin}
 							end={this.state.end}
 						/>
-					</div>
 
 					<div style={{ margin: '10px'}}>
-						<Grid.Column>
+
 							<Dropdown
 								style={{
 									marginLeft: "20px",
@@ -196,9 +194,9 @@ class SaveTimeRecording extends Component {
 								onChange={(e, { value }) => this.handleActivityChange(value)}
 							/>
 							{saveButton}
-						</Grid.Column>
+
 					</div>
-				</Grid>
+				</div>
 			</>
 		);
 	}
