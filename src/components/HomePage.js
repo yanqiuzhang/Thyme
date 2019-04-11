@@ -3,7 +3,7 @@ import LoginLogic from "./LoginLogic";
 import SaveTimeRecording from "./SaveTimeRecording";
 import ViewTimeRecording from "./ViewTimeRecording";
 import { Segment } from "semantic-ui-react";
-import Menubar from './Menubar';
+import Menubar from "./Menubar";
 
 class HomePage extends Component {
 	constructor(props) {
@@ -20,18 +20,14 @@ class HomePage extends Component {
 	isUserAuthenticated() {
 		if (this.state.authenticated === true) {
 			return (
-				<div>
-					<div>
-						<Menubar />
-						<Segment basic>
-							<SaveTimeRecording />
-						</Segment>
-					</div>
-					<div style={{ paddingTop: "70px", margin: "auto" }}>
-						<Segment basic>
+				<div style={{ background: "#354152" }}>
+					<Menubar />
+					<Segment basic>
+						<SaveTimeRecording />
+						<div style={{ paddingTop: "70px", margin: "auto" }}>
 							<ViewTimeRecording />
-						</Segment>
-					</div>
+						</div>
+					</Segment>
 				</div>
 			);
 		} else {
