@@ -4,6 +4,7 @@ import SaveTimeRecording from "./SaveTimeRecording";
 import ViewTimeRecording from "./ViewTimeRecording";
 import { Segment } from "semantic-ui-react";
 import Menubar from "./Menubar";
+import Footer from './footer'
 
 class HomePage extends Component {
 	constructor(props) {
@@ -22,12 +23,13 @@ class HomePage extends Component {
 			return (
 				<div style={{ background: "#354152" }}>
 					<Menubar />
-					<Segment basic>
+					<div style={{marginLeft: '60px'}}>
 						<SaveTimeRecording />
-						<div style={{ paddingTop: "70px", margin: "auto" }}>
+						<div style={{ marginLeft: '20px', paddingTop: "70px", margin: "auto" }}>
 							<ViewTimeRecording />
 						</div>
-					</Segment>
+					</div>
+					<Footer />
 				</div>
 			);
 		} else {
