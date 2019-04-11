@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Button, Grid, Menu, Sidebar, Segment } from "semantic-ui-react";
 import { IoIosMenu } from "react-icons/io";
 import logo from "../image/image.png";
-import SaveTimeRecording from "./SaveTimeRecording";
-import ViewTimeRecording from './ViewTimeRecording'
 
 class Menubar extends Component {
 	constructor(props) {
@@ -20,7 +18,7 @@ class Menubar extends Component {
 		const { visible } = this.state;
 
 		return (
-			<Grid columns={2} style={{ background: "#354152" }}>
+			<Grid columns={2} style={{ background: "#354152"}}>
 				<Grid.Column
 					style={{ background: "#5bb695", width: "60px" }}
 				>
@@ -60,9 +58,6 @@ class Menubar extends Component {
 						/>
 					</div>
 
-					<p id="login_message" style={{ color: '#354151', textAlign: 'center' }}>
-						Welcome, {this.props.user.toUpperCase()}
-					</p>
 					<Menu.Item
 						className="item"
 						as="a"
@@ -120,16 +115,6 @@ class Menubar extends Component {
 						Tab5
 					</Menu.Item>
 				</Sidebar>
-				<div >
-					<Segment basic>
-						<SaveTimeRecording />
-					</Segment>
-				</div>
-				<div style={{ paddingTop: '70px', margin: 'auto' }}>
-					<Segment basic>
-						<ViewTimeRecording />
-					</Segment>
-				</div>
 			</Grid>
 		);
 	}
