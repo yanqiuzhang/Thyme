@@ -3,7 +3,8 @@ import { Button, Grid, Menu, Sidebar, Segment } from "semantic-ui-react";
 import { IoIosMenu } from "react-icons/io";
 import logo from "../image/image.png";
 import SaveTimeRecording from "./SaveTimeRecording";
-import ViewTimeRecording from './ViewTimeRecording'
+import ViewTimeRecording from './ViewTimeRecording';
+import Footer from './footer';
 
 class Menubar extends Component {
 	constructor(props) {
@@ -130,6 +131,9 @@ class Menubar extends Component {
 					<Segment basic>
 						<ViewTimeRecording />
 					</Segment>
+				</div>
+				<div>
+					<Footer />
 				</div>
 			</Grid>
 		);

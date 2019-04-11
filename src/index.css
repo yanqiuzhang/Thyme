@@ -121,7 +121,13 @@ code {
 	padding-top: 4px;
 	padding-bottom: 5px;
 	text-align: center;
-	width: 1223px;
+	width: 1161px;
 	margin-left: 10px;
 	margin-top: 10px;
+}
+
+@media screen and (max-width: 1600px) {
+	.gridBackground {
+			width: 1161px;
+	}
 }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { saveTime } from "../modules/saveTimeSheet";
 import TimeInputForm from "./TimeInputForm";
 import '../index.css';
-import { Button, Grid, Dropdown } from "semantic-ui-react";
+import { Button, Dropdown } from "semantic-ui-react";
 import {
 	fetchCustomers,
 	fetchProjects,
@@ -90,7 +90,7 @@ class SaveTimeRecording extends Component {
 	}
 
 	filterProjects() {
-		if (this.state.customer != "") {
+		if (this.state.customer !== "") {
 			const filtered = this.state.projects.filter(val => {
 				return val.customer === this.state.customer;
 			});
@@ -105,7 +105,7 @@ class SaveTimeRecording extends Component {
 	}
 
 	filterActivities() {
-		if (this.state.project != "") {
+		if (this.state.project !== "") {
 			const filtered = this.state.activities.filter(val => {
 				return val.project === this.state.project;
 			})
