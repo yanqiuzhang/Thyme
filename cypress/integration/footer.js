@@ -1,8 +1,8 @@
 /// <reference types="Cypress" />
 
-describe('User can see a footer bar', () => {
+describe('Footer', () => {
 
-	it('User signs in successfully', () => {
+	it('User can see a footer bar', () => {
 		cy.visit('http://localhost:3000')
 			.get('input[type=name]').type('anna_admin')
 			.get('input[type=password]').type('api_kitten')
