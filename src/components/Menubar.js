@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { Button, Grid, Menu, Sidebar } from "semantic-ui-react";
-import { IoIosMenu, IoIosTimer, IoIosStats, IoIosDocument } from "react-icons/io";
+import {
+	IoIosMenu,
+	IoIosTimer,
+	IoIosStats,
+	IoIosDocument
+} from "react-icons/io";
 import logo from "../image/image.png";
 import { Link } from "react-router-dom";
 
@@ -20,7 +25,9 @@ class Menubar extends Component {
 
 		return (
 			<Grid columns={2} style={{ background: "#354152" }}>
-				<Grid.Column style={{ background: "#5bb695", width: "60px", height: "inherit"}}>
+				<Grid.Column
+					style={{ background: "#5bb695", width: "60px", height: "inherit" }}
+				>
 					<Button
 						id="menuicon"
 						disabled={visible}
@@ -58,8 +65,8 @@ class Menubar extends Component {
 					</div>
 
 					<Menu.Item
-						as={ Link }
-						to='/'
+						as={Link}
+						to="/"
 						style={{
 							background: "#dbdbdf",
 							marginBottom: "1px",
@@ -83,8 +90,8 @@ class Menubar extends Component {
 						Activity Timer
 					</Menu.Item>
 					<Menu.Item
-						as={ Link }
-						to='/Test'
+						as={Link}
+						to="/Test"
 						style={{
 							background: "#dbdbdf",
 							marginBottom: "1px",
@@ -130,6 +137,30 @@ class Menubar extends Component {
 							}}
 						/>
 						Reports
+					</Menu.Item>
+					<Menu.Item
+						className="item"
+						as="a"
+						onClick={() => {
+							localStorage.removeItem("authenticated");
+							document.location.href = "./";
+						}}
+						style={{
+							position: "fixed",
+							left: "0",
+							bottom: "0",
+							background: "#dbdbdf",
+							marginBottom: "1px",
+							height: "60px",
+							marginLeft: "2%",
+							width: "96%",
+							verticalAlign: "middle",
+							color: "#354151",
+							fontSize: "20px"
+						}}
+					>
+						{" "}
+						Logout
 					</Menu.Item>
 				</Sidebar>
 			</Grid>

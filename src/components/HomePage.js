@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import LoginLogic from "./LoginLogic";
 import Menubar from "./Menubar";
-import Footer from './footer'
-import TimeRecording from './TimeRecording'
+import Footer from "./footer";
+import TimeRecording from "./TimeRecording";
 
 class HomePage extends Component {
 	constructor(props) {
@@ -12,8 +12,15 @@ class HomePage extends Component {
 		};
 	}
 
+	componentDidMount() {
+		this.setState({
+			authenticated: Boolean(localStorage.getItem("authenticated")) || false
+		});
+	}
+
 	userAuthenticated() {
 		this.setState({ authenticated: true });
+		localStorage.setItem("authenticated", true);
 	}
 
 	isUserAuthenticated() {
