@@ -69,7 +69,7 @@ class Menubar extends Component {
 						to="/"
 						style={{
 							background: "#dbdbdf",
-							marginBottom: "1px",
+							marginBottom: "2px",
 							height: "60px",
 							marginLeft: "2%",
 							width: "96%",
@@ -94,7 +94,7 @@ class Menubar extends Component {
 						to="/Test"
 						style={{
 							background: "#dbdbdf",
-							marginBottom: "1px",
+							marginBottom: "2px",
 							height: "60px",
 							marginLeft: "2%",
 							width: "96%",
@@ -118,7 +118,7 @@ class Menubar extends Component {
 						as="a"
 						style={{
 							background: "#dbdbdf",
-							marginBottom: "1px",
+							marginBottom: "2px",
 							height: "60px",
 							marginLeft: "2%",
 							width: "96%",
@@ -138,7 +138,7 @@ class Menubar extends Component {
 						/>
 						Reports
 					</Menu.Item>
-					<Menu.Item
+					<div
 						className="item"
 						as="a"
 						onClick={() => {
@@ -146,22 +146,20 @@ class Menubar extends Component {
 							document.location.href = "./";
 						}}
 						style={{
-							position: "fixed",
-							left: "0",
-							bottom: "0",
-							background: "#dbdbdf",
-							marginBottom: "1px",
-							height: "60px",
-							marginLeft: "2%",
-							width: "96%",
-							verticalAlign: "middle",
-							color: "#354151",
-							fontSize: "20px"
+							background: "#354151",
+							height: "40px",
+							width: "50%",
+							marginLeft: "22%",
+							textAlign: "center",
+							color: "white",
+							marginTop: "80px",
+							border: "1px solid #354151",
+							borderRadius: "6px",
 						}}
 					>
 						{" "}
 						Logout
-					</Menu.Item>
+					</div>
 				</Sidebar>
 			</Grid>
 		);
