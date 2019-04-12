@@ -3,10 +3,6 @@ import "../index.css";
 import moment from "moment-timezone";
 
 class ViewTimeForm extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		const timesheets = this.props.timesheets;
 
