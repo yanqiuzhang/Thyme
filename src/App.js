@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { Switch, Route } from "react-router-dom";
 import HomePage from "./components/HomePage"
-import Menubar from "./components/Menubar"
-
-
 
 class App extends Component {
 	render() {

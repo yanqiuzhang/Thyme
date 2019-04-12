@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Button, Grid, Menu, Sidebar, Segment } from "semantic-ui-react";
-import { IoIosMenu } from "react-icons/io";
+import { Button, Grid, Menu, Sidebar } from "semantic-ui-react";
+import { IoIosMenu, IoIosTimer, IoIosStats, IoIosDocument } from "react-icons/io";
 import logo from "../image/image.png";
+import { Link } from "react-router-dom";
 
 class Menubar extends Component {
 	constructor(props) {
@@ -18,12 +19,12 @@ class Menubar extends Component {
 		const { visible } = this.state;
 
 		return (
-			<Grid columns={2} style={{ background: "#354152"}}>
+			<Grid columns={2} style={{ background: "#354152" }}>
 				<Grid.Column
-					style={{ background: "#5bb695", width: "60px" }}
+					style={{ background: "#5bb695", width: "60px", height: "inherit" }}
 				>
 					<Button
-						id='menuicon'
+						id="menuicon"
 						disabled={visible}
 						onClick={this.handleShowClick}
 						style={{ background: "#5bb695", padding: 0, marginLeft: 7 }}
@@ -59,60 +60,76 @@ class Menubar extends Component {
 					</div>
 
 					<Menu.Item
+						component={<Link to="/TimeRecording" />}
+						style={{
+							background: "#dbdbdf",
+							marginBottom: "1px",
+							height: "60px",
+							marginLeft: "2%",
+							width: "96%",
+							verticalAlign: "middle",
+							color: "#354151",
+							fontSize: "20px"
+						}}
+					>
+						<IoIosTimer
+							size={30}
+							style={{
+								paddingBottom: "3px",
+								float: "left",
+								marginLeft: "15px",
+								marginRight: "15px"
+							}}
+						/>
+						Activity Timer
+					</Menu.Item>
+					<Menu.Item
+						as="a"
+						style={{
+							background: "#dbdbdf",
+							marginBottom: "1px",
+							height: "60px",
+							marginLeft: "2%",
+							width: "96%",
+							color: "#354151",
+							fontSize: "20px"
+						}}
+					>
+						<IoIosStats
+							size={30}
+							style={{
+								paddingBottom: "3px",
+								float: "left",
+								marginLeft: "15px",
+								marginRight: "15px"
+							}}
+						/>
+						Dashboard
+					</Menu.Item>
+					<Menu.Item
 						className="item"
 						as="a"
 						style={{
 							background: "#dbdbdf",
-							marginBottom: "10px",
-							width: "80%",
-							marginLeft: "10%"
+							marginBottom: "1px",
+							height: "60px",
+							marginLeft: "2%",
+							width: "96%",
+							verticalAlign: "middle",
+							color: "#354151",
+							fontSize: "20px"
 						}}
 					>
-						Tab1
-					</Menu.Item>
-					<Menu.Item
-						as="a"
-						style={{
-							background: "#dbdbdf",
-							marginBottom: "10px",
-							width: "80%",
-							marginLeft: "10%"
-						}}
-					>
-						Tab2
-					</Menu.Item>
-					<Menu.Item
-						as="a"
-						style={{
-							background: "#dbdbdf",
-							marginBottom: "10px",
-							width: "80%",
-							marginLeft: "10%"
-						}}
-					>
-						Tab3
-					</Menu.Item>
-					<Menu.Item
-						as="a"
-						style={{
-							background: "#dbdbdf",
-							marginBottom: "10px",
-							width: "80%",
-							marginLeft: "10%"
-						}}
-					>
-						Tab4
-					</Menu.Item>
-					<Menu.Item
-						as="a"
-						style={{
-							background: "#dbdbdf",
-							marginBottom: "10px",
-							width: "80%",
-							marginLeft: "10%"
-						}}
-					>
-						Tab5
+						<IoIosDocument
+							size={30}
+							style={{
+								paddingBottom: "3px",
+								float: "left",
+								marginLeft: "15px",
+								marginRight: "15px"
+							}}
+						/>
+						Reports
 					</Menu.Item>
 				</Sidebar>
 			</Grid>
