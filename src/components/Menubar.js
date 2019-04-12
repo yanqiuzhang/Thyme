@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { Button, Grid, Menu, Sidebar } from "semantic-ui-react";
-import { IoIosMenu, IoIosTimer, IoIosStats, IoIosDocument } from "react-icons/io";
+import {
+	IoIosMenu,
+	IoIosTimer,
+	IoIosStats,
+	IoIosDocument
+} from "react-icons/io";
 import logo from "../image/image.png";
 import { Link } from "react-router-dom";
 
@@ -45,6 +50,12 @@ class Menubar extends Component {
 						width: "300px"
 					}}
 				>
+					<Button
+						onClick={this.handleHideClick}
+						style={{ background: "#46b395", marginLeft: "220px" }}
+						>
+						<IoIosMenu size={30}/>
+						</Button>
 					<div className="form">
 						<img
 							src={logo}
