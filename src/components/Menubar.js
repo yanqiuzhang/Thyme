@@ -20,9 +20,7 @@ class Menubar extends Component {
 
 		return (
 			<Grid columns={2} style={{ background: "#354152" }}>
-				<Grid.Column
-					style={{ background: "#5bb695", width: "60px", height: "inherit" }}
-				>
+				<Grid.Column style={{ background: "#5bb695", width: "60px", height: "inherit"}}>
 					<Button
 						id="menuicon"
 						disabled={visible}
@@ -60,7 +58,8 @@ class Menubar extends Component {
 					</div>
 
 					<Menu.Item
-						component={<Link to="/TimeRecording" />}
+						as={ Link }
+						to='/'
 						style={{
 							background: "#dbdbdf",
 							marginBottom: "1px",
@@ -84,7 +83,8 @@ class Menubar extends Component {
 						Activity Timer
 					</Menu.Item>
 					<Menu.Item
-						as="a"
+						as={ Link }
+						to='/Test'
 						style={{
 							background: "#dbdbdf",
 							marginBottom: "1px",
