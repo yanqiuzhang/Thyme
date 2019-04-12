@@ -26,7 +26,7 @@ class Menubar extends Component {
 		return (
 			<Grid columns={2} style={{ background: "#354152" }}>
 				<Grid.Column
-					style={{ background: "#5bb695", width: "60px", height: "inherit" }}
+					style={{ background: "#5bb695", width: "60px", height: "4920px", position: "absolute" }}
 				>
 					<Button
 						id="menuicon"
@@ -47,7 +47,7 @@ class Menubar extends Component {
 					visible={visible}
 					style={{
 						background: "#46b395",
-						width: "300px"
+						width: "380px"
 					}}
 				>
 					<Button
@@ -61,11 +61,9 @@ class Menubar extends Component {
 							src={logo}
 							alt="logo"
 							style={{
-								marginLeft: "27px",
 								paddingTop: "20px",
 								marginBottom: "25px",
 								width: "207px",
-								height: "135px"
 							}}
 						/>
 					</div>
