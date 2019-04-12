@@ -30,14 +30,15 @@ code {
 
 .user_input {
 	border-radius: 17px;
-	border: 1.5px solid black;
+	border: 2px solid black;
 	background-color: #354151;
 	padding-top: 6px;
 	padding-bottom: 6px;
 	color : white;
 	margin-top: 20px;
 	text-align: center;
-  width: 520px;
+	width: 520px;
+	outline: none;
 }
 
 .sign_in {
