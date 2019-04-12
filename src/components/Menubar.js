@@ -61,9 +61,9 @@ class Menubar extends Component {
 							src={logo}
 							alt="logo"
 							style={{
-								paddingTop: "20px",
 								marginBottom: "25px",
-								width: "207px",
+								width: "245px",
+                marginLeft: "10px"
 							}}
 						/>
 					</div>
