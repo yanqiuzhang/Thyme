@@ -19,7 +19,6 @@ describe('Login form', () => {
 			.get('input[type=password]').type('api_kitten')
 			.get('button[type=submit]').click()
 			.get('button[id=menuicon]').click('topLeft', { force: true })
-			.get('#login_message').should('contain', 'Welcome, ANNA_ADMIN')
 		})
 
 	it('User does not get successfully authenticated', () => {

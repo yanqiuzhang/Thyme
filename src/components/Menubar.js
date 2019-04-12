@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Button, Grid, Menu, Sidebar, Segment } from "semantic-ui-react";
+import { Button, Grid, Menu, Sidebar } from "semantic-ui-react";
 import { IoIosMenu, IoIosTimer, IoIosStats, IoIosDocument } from "react-icons/io";
 import logo from "../image/image.png";
+import { Link } from "react-router-dom";
 
 class Menubar extends Component {
 	constructor(props) {
@@ -59,8 +60,7 @@ class Menubar extends Component {
 					</div>
 
 					<Menu.Item
-						className="item"
-						as="a"
+						component={<Link to="/TimeRecording" />}
 						style={{
 							background: "#dbdbdf",
 							marginBottom: "1px",
@@ -107,6 +107,7 @@ class Menubar extends Component {
 						Dashboard
 					</Menu.Item>
 					<Menu.Item
+						className="item"
 						as="a"
 						style={{
 							background: "#dbdbdf",

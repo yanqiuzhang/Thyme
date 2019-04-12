@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import LoginLogic from "./LoginLogic";
-import SaveTimeRecording from "./SaveTimeRecording";
-import ViewTimeRecording from "./ViewTimeRecording";
-import { Segment } from "semantic-ui-react";
 import Menubar from "./Menubar";
 import Footer from './footer'
+import TimeRecording from './TimeRecording'
 
 class HomePage extends Component {
 	constructor(props) {
@@ -23,12 +21,7 @@ class HomePage extends Component {
 			return (
 				<div style={{ background: "#354152" }}>
 					<Menubar />
-					<div style={{marginLeft: '60px'}}>
-						<SaveTimeRecording />
-						<div style={{ marginLeft: '20px', paddingTop: "70px", margin: "auto" }}>
-							<ViewTimeRecording />
-						</div>
-					</div>
+					<TimeRecording />
 					<Footer />
 				</div>
 			);
