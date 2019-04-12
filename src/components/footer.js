@@ -10,6 +10,9 @@ class Footer extends Component {
 					height: "40px",
 					backgroundColor: "#5cb695",
 					color: 'white',
+					position: 'fixed',
+					bottom: '0',
+					width: '100%'
 				}}
 			>
 				<div style={{ textAlign: 'center', paddingBottom: '20px', paddingTop: '20px', backgroundColor: "#5cb695"}}>
