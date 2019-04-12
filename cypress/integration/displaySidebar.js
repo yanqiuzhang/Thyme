@@ -14,6 +14,6 @@ describe("Display a sidebar", () => {
 	});
 
 	it("has a tab1", function () {
-		cy.get(".item").should("contain", "Tab1");
+		cy.get(".item").should("contain", "Dashboard");
 	});
 });

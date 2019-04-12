@@ -8,14 +8,12 @@ class Footer extends Component {
 					margin: "0 auto",
 					textAlign: "center",
 					height: "40px",
-					backgroundColor: "#5cb695",
+					backgroundColor: "#5c6368",
 					color: 'white',
-					position: 'fixed',
-					bottom: '0',
 					width: '100%'
 				}}
 			>
-				<div style={{ textAlign: 'center', paddingBottom: '20px', paddingTop: '20px', backgroundColor: "#5cb695"}}>
+				<div style={{ textAlign: 'center', paddingBottom: '20px', paddingTop: '20px', backgroundColor: "#5c6368"}}>
 					<p style={{fontSize: '10px'}}>@Copyright 2019 Thyme Out Inc All Rights Reserved</p>
 				</div>
 			</div>

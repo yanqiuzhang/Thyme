@@ -145,7 +145,7 @@ class SaveTimeRecording extends Component {
 
 		return (
 			<>
-				<div columns="equal" textAlign="center" className="gridBackground">
+				<div columns="equal" textAlign="center" className="gridBackground" style={{marginTop: "70px"}}>
 						<TimeInputForm
 							style={{
 								aligncontent: "left",

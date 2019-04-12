@@ -26,13 +26,13 @@ class Menubar extends Component {
 		return (
 			<Grid columns={2} style={{ background: "#354152" }}>
 				<Grid.Column
-					style={{ background: "#5bb695", width: "60px", height: "inherit" }}
+					style={{ background: "#5bb695", width: "60px", height: "4920px", position: "absolute" }}
 				>
 					<Button
 						id="menuicon"
 						disabled={visible}
 						onClick={this.handleShowClick}
-						style={{ background: "#5bb695", padding: 0, marginLeft: 7 }}
+						style={{ background: "#5bb695", padding: 0, marginLeft: 7, position: "fixed", left: "0"}}
 					>
 						<IoIosMenu size={30} />
 					</Button>
@@ -50,16 +50,20 @@ class Menubar extends Component {
 						width: "300px"
 					}}
 				>
+					<Button
+						onClick={this.handleHideClick}
+						style={{ background: "#46b395", marginLeft: "220px" }}
+						>
+						<IoIosMenu size={30}/>
+						</Button>
 					<div className="form">
 						<img
 							src={logo}
 							alt="logo"
 							style={{
-								marginLeft: "27px",
 								paddingTop: "20px",
 								marginBottom: "25px",
 								width: "207px",
-								height: "135px"
 							}}
 						/>
 					</div>
